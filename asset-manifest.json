@@ -1,0 +1,39 @@
+{
+  "files": {
+    "app.js": "/XekAppWeb/static/js/app.b35892b9.chunk.js",
+    "app.js.map": "/XekAppWeb/static/js/app.b35892b9.chunk.js.map",
+    "runtime~app.js": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js",
+    "runtime~app.js.map": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js.map",
+    "static/js/2.cf9aab87.chunk.js": "/XekAppWeb/static/js/2.cf9aab87.chunk.js",
+    "static/js/2.cf9aab87.chunk.js.map": "/XekAppWeb/static/js/2.cf9aab87.chunk.js.map",
+    "fonts/AntDesign.ttf": "/XekAppWeb/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/XekAppWeb/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/XekAppWeb/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/XekAppWeb/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/XekAppWeb/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/XekAppWeb/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/XekAppWeb/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/XekAppWeb/./fonts/Foundation.ttf",
+    "fonts/Ionicons.ttf": "/XekAppWeb/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/XekAppWeb/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/XekAppWeb/./fonts/MaterialIcons.ttf",
+    "fonts/Nunito-Bold.ttf": "/XekAppWeb/./fonts/Nunito-Bold.ttf",
+    "fonts/Nunito-Regular.ttf": "/XekAppWeb/./fonts/Nunito-Regular.ttf",
+    "fonts/SimpleLineIcons.ttf": "/XekAppWeb/./fonts/SimpleLineIcons.ttf",
+    "favicon-16.png": "/XekAppWeb/favicon-16.png",
+    "favicon-32.png": "/XekAppWeb/favicon-32.png",
+    "favicon.ico": "/XekAppWeb/favicon.ico",
+    "index.html": "/XekAppWeb/index.html",
+    "manifest.json": "/XekAppWeb/manifest.json",
+    "serve.json": "/XekAppWeb/serve.json",
+    "static/media/back-chevron.png": "/XekAppWeb/static/media/back-chevron.2379ae89.png",
+    "static/media/back-icon-mask.png": "/XekAppWeb/static/media/back-icon-mask.5223c8d9.png",
+    "static/media/back-icon.png": "/XekAppWeb/static/media/back-icon.35ba0eae.png",
+    "static/media/logo.png": "/XekAppWeb/static/media/logo.d6e818fa.png"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.1bf5d56b.js",
+    "static/js/2.cf9aab87.chunk.js",
+    "static/js/app.b35892b9.chunk.js"
+  ]
+}
