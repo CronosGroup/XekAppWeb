@@ -1,21 +1,4 @@
-
-const merge = require('webpack-merge');
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
-const postcssCustomProperties = require('postcss-custom-properties');
-
-const cssLoader = {
-        test: /\.css$/,
-        use: [
-            'style-loader',
-            { loader: 'css-loader', options: { importLoaders: 1 } },
-            { loader: 'postcss-loader', options: {
-                    ident: 'postcss',
-                    plugins: () => [
-                        postcssCustomProperties(/* pluginOptions */)
-                    ]
-                } }
-        ]
-    }
 
 // Expo CLI will await this method so you can optionally return a promise.
 module.exports = async function(env, argv) {
