@@ -1,23 +1,163 @@
-# Compiled class file
-*.class
+Skip to content
+Search or jump to…
 
-# Log file
-*.log
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@jorgesanji 
+expo
+/
+expo
+155k
+201
+9.9k
+1.5k
+ Code
+ Issues 742
+ Pull requests 122
+ Discussions Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+expo/.gitignore
+@tsapeta tsapeta [android] Remove Fabric and Crashlytics on Android (#8211)
+6a72752 13 days ago
+@ide@tsapeta@EvanBacon@esamelson@jesseruder@nicknovitski@brentvatne@expbot@IjzerenHein@sjchmiela@sergeichestakov@dsokal@mczernek
+121 lines (100 sloc)  2.06 KB
+  
+# Expo
+.expo
+__generated__
+web-build
 
-# BlueJ files
-*.ctxt
+# macOS
+.DS_Store
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Ruby
+.direnv
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Emacs
+*~
+
+# Vim
+.*.swp
+.*.swo
+.*.swn
+.*.swm
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.xccheckout
+*.xcscmblueprint
+xcuserdata
+
+# Android Studio
+*.iml
+.gradle
+.idea/libraries
+.idea/workspace.xml
+.idea/gradle.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+
+# Eclipse
+.project
+.settings
+
+# VSCode
+.history/
+
+# Android
+*.apk
+*.hprof
+/android/**/build
+/android/**/local.properties
+/android/captures
+/android/expoview/libs/ReactAndroid-temp
+/android/versioned-react-native/ReactAndroid
+ReactAndroid-temp.aar
+
+# Tools
+jarjar-rules.txt
+
+# Dynamic Macros
+/ios/Exponent/Supporting/EXBuildConstants.plist.bak
+/ios/Exponent/Supporting/EXBuildConstants.plist.json
+/ios/Exponent/Supporting/EXBuildConstants.plist
+/ios/Exponent/Supporting/GoogleService-Info.plist
+/ios/Exponent/Supporting/Info.plist.bak
+/ios/Exponent/Supporting/Info.plist.json
+/android/expoview/src/main/java/host/exp/exponent/generated/ExponentBuildConstants.java
+/android/app/src/androidTest/java/host/exp/exponent/generated/TestBuildConstants.java
+.kernel-ngrok-url
+
+# Template files
+/android/app/src/main/AndroidManifest.xml
+/android/app/google-services.json
+/android/expoview/src/main/java/host/exp/exponent/generated/ExponentKeys.java
+/apps/bare-expo/android/app/google-services.json
+/apps/bare-expo/ios/BareExpo/GoogleService-Info.plist
+/ios/Exponent/Generated/EXKeys.h
+/ios/ExponentIntegrationTests/EXTestEnvironment.plist
+/exponent-view-template/ios/Podfile
+
+# Template projects
+templates/**/android/**/generated/*
+templates/**/android/app/build
+
+# Codemod
+.codemod.bookmark
+
+# Fastlane
+/*.cer
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/Deployment
+/Preview.html
+/gc_keys.json
+
+# CI
+/android/logcat.txt
+
+# Shell apps
+android-shell-app
+shellAppBase-*
+shellAppIntermediates
+shellAppWorkspaces
+/artifacts/*
+
+# Expo Client builds
+/client-builds
+
+# Expo web env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+apps/bare-expo/deploy-url.txt
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
