@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "xekApp",
+    "slug": "xekApp",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "facebookAppId": "241987760207264",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.cronosgroup.xekapp",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "App would like to access your current location to determine",
+        "NSLocationAlwaysUsageDescription": "App would like to access your current location",
+        "NSCameraUsageDescription": "App would like to access your Camera"
+      }
+    },
+    "android": {
+      "package": "com.cronosgroup.xekapp",
+      "versionCode": 1
+    },
+    "description": "",
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "svg",
+        "ts",
+        "tsx"
+      ]
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
