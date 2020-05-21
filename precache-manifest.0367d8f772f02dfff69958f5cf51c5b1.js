@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/XekAppWeb/static/media/back-icon-mask.5223c8d9.png"
   },
   {
-    "revision": "d0c694b562b2208635f250762cd7fc79",
-    "url": "/XekAppWeb/serve.json"
-  },
-  {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/XekAppWeb/expo-service-worker.js"
+  },
+  {
+    "revision": "d0c694b562b2208635f250762cd7fc79",
+    "url": "/XekAppWeb/serve.json"
   },
   {
     "revision": "dd3614974cad8f8ce4ac52af17f4ae87",
