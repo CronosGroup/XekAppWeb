@@ -43,20 +43,18 @@ class ResultsPresenter {
     }
 
     async initData() {
-        this.view.showLoader()
         const userPersistence = await UserPersistence.getInstance()
         const dataSource = await Datasource.getInstance()
         let access_token = await userPersistence.getAccessToken()
         dataSource.getResults(access_token).then(value => {
             this.setLevel(value.level)
             }).catch(reason => {
-            console.debug(reason)
+            console.log(reason)
         })
         dataSource.getUser(access_token).then(value => {
             this.view.setName(value.name)
-            this.view.hideLoader()
         }).catch(reason => {
-            console.debug(reason)
+            console.log(reason)
         })
     }
 }

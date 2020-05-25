@@ -7,11 +7,9 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
-//import MapView,{Marker} from 'react-native-maps';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Colors from "../../utils/Colors";
 import MapPresenter from "./presenter/MapPresenter";
-import Utils from "../../utils/Utils";
 import BackButton from "../../components/BackButton";
 import languages from "../../utils/languages/AppLocalization";
 

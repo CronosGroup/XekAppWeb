@@ -16,21 +16,20 @@ class HomePresenter {
     async initData() {
         const userPersistence = await UserPersistence.getInstance()
         let access_token = await userPersistence.getAccessToken()
-        console.debug("getQuestions", "accessToken = ", access_token)
+        console.log("getQuestions", "accessToken = ", access_token)
         const dataSource = await Datasource.getInstance()
         dataSource.getNewQuestions(access_token).then(value => {
             this.data = value.rows
             this.view.setItems(this.data)
         }).catch(reason => {
-            console.debug(reason)
+            console.log(reason)
         })
     }
 
-    async postAnswers(showResults) {
+    async postAnswers() {
         if (this.itemsFilled.length !== this.data.length) {
             return
         }
-        this.view.showLoader()
         let answersToSend = this.itemsFilled.map(question => {
             question.answers = question.answers.filter(answer => {
                 return answer.selected
@@ -38,7 +37,6 @@ class HomePresenter {
             return question
         })
         let body = {"answers": answersToSend}
-        console.debug(body)
         const userPersistence = await UserPersistence.getInstance()
         let access_token = await userPersistence.getAccessToken()
         const dataSource = await Datasource.getInstance()
@@ -47,16 +45,9 @@ class HomePresenter {
                 this.view.goToPhoneRegistration()
             }else if (value.successful === true && !value.first_submit){
                 this.view.goToResults()
-                /*if(showResults){
-                    this.view.goToResults()
-                }else{
-                    this.view.goToBack()
-                }*/
             }
-            this.view.hideLoader()
         }).catch(reason => {
-            this.view.hideLoader()
-            console.error(reason)
+            console.log(reason)
         })
     }
 

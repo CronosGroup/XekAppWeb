@@ -1,6 +1,6 @@
 
 import QuestionsResponse from "./model/QuestionsResponse"
-import manifest from "../../../app";
+import manifest from "../../../app.json";
 import * as Localization from 'expo-localization';
 import ApiService from "./ApiService";
 

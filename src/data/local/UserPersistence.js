@@ -63,7 +63,7 @@ class UserPersistence{
        }else{
            data = await SecureStore.getItemAsync(UserPersistence.userInfoKey)
        }
-      return  data !== null
+      return  data !== null && JSON.parse(data).access_token !== undefined
     }
 }
 

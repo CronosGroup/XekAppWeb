@@ -66,9 +66,8 @@ const styles = StyleSheet.create({
     },
 
     description_status: {
-        width: "90%",
         fontFamily:'Nunito-Regular',
-        textAlign: "left",
+        textAlign: "center",
         fontSize: 21,
         color: Colors.textFormItem,
         marginTop: 25,

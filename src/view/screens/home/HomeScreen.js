@@ -13,7 +13,6 @@ import {
 import QuestionView from "../../components/QuestionView";
 import HomePresenter from "./presenter/HomePresenter";
 import Colors from "../../utils/Colors";
-import Loader from "react-native-modal-loader";
 import BackButton from "../../components/BackButton";
 import languages from "../../utils/languages/AppLocalization";
 
@@ -29,7 +28,6 @@ class HomeScreen extends Component {
             data: [],
             isLoading: true,
             enableToSend: false,
-            sendingData: false,
             showResults: showResults,
         }
     }
@@ -65,14 +63,6 @@ class HomeScreen extends Component {
         this.setState({enableToSend: false})
     }
 
-    hideLoader() {
-        this.setState({sendingData: false})
-    }
-
-    showLoader() {
-        this.setState({sendingData: true})
-    }
-
     goToPhoneRegistration() {
         this.props.navigation.navigate('Phone')
     }
@@ -88,8 +78,6 @@ class HomeScreen extends Component {
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
         return <View style={styles.container}>
-
-            <Loader loading={this.state.sendingData} color={Colors.primary}/>
 
             {!this.state.showResults ? <BackButton onClick={() => {
                 this.props.navigation.goBack()
@@ -119,7 +107,7 @@ class HomeScreen extends Component {
             />
 
             <TouchableOpacity activeOpacity={0.7} style={[styles.button, {backgroundColor: color}]}
-                              onPress={() => this.presenter.postAnswers(this.state.showResults)}>
+                              onPress={() => this.presenter.postAnswers()}>
                 <Text style={styles.buttonText}>{languages.getLocalized("home_get_results")}</Text>
             </TouchableOpacity>
         </View>

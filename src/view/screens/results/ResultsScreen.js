@@ -8,7 +8,6 @@ import {
     FlatList,
     BackHandler,
 } from 'react-native';
-import Loader from "react-native-modal-loader";
 import Colors from "../../utils/Colors";
 import ResultsPresenter from "./presenter/ResultsPresenter";
 import languages from "../../utils/languages/AppLocalization.js";
@@ -65,14 +64,6 @@ class ResultsScreen extends Component {
         this.setState({name: name})
     }
 
-    hideLoader() {
-        this.setState({isLoading: false})
-    }
-
-    showLoader() {
-        this.setState({isLoading: true})
-    }
-
     setLowStatus() {
         this.setState({colorStatus: Colors.green,
             statusText: 'results_low_risk',
@@ -109,8 +100,6 @@ class ResultsScreen extends Component {
 
     render() {
         return <View style={styles.container}>
-
-            <Loader loading={this.state.isLoading} color={Colors.primary}/>
 
             <Image style={styles.icon} source={require('../../../../assets/logo.png')}/>
 

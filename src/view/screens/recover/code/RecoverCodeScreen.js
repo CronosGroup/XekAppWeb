@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     TextInput,
     Image,
-    Keyboard, TouchableWithoutFeedback, ScrollView
+    ScrollView
 } from 'react-native';
 import Colors from "../../../utils/Colors";
 import RecoverCodePresenter from "./presenter/RecoverCodePresenter";
@@ -63,9 +63,7 @@ class RecoverCodeScreen extends Component {
 
     render() {
         let colorCode = this.state.enableToSendCode ? Colors.buttonEnable : Colors.disable
-        return <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-
-            <View style={styles.container}>
+        return <View style={styles.container}>
 
                 <BackButton onClick={() => {
                     this.props.navigation.goBack()
@@ -80,7 +78,7 @@ class RecoverCodeScreen extends Component {
                     <Text style={styles.title}>{languages.getLocalized("recover_code_title")}</Text>
 
                     <View style={styles.textInputContainer}>
-                        {this.state.showPlaceHolder ? <View style={styles.placeHolderContainer}>
+                        {this.state.showPlaceHolder ? <View style={styles.placeHolderContainer} pointerEvents="none">
                                 <CheckBoxItemView image={Numeral} height={46} width={46}/>
                                 <CheckBoxItemView image={Numeral} height={46} width={46}/>
                                 <CheckBoxItemView image={Numeral} height={46} width={46}/>
@@ -90,7 +88,9 @@ class RecoverCodeScreen extends Component {
                             </View>
                             : null}
                         <TextInput
-                            style={styles.textInput} maxLength={6} keyboardType={"numeric"}
+                            style={styles.textInput}
+                            maxLength={6}
+                            keyboardType={"numeric"}
                             onChangeText={text => this.presenter.setCode(text)}/>
                     </View>
                     {this.state.codeError ?
@@ -118,7 +118,6 @@ class RecoverCodeScreen extends Component {
                     {this.state.message}
                 </Snackbar>
             </View>
-        </TouchableWithoutFeedback>
     }
 }
 
