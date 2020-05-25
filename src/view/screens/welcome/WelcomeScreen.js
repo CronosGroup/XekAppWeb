@@ -6,6 +6,7 @@ import {
     Image,
     TouchableOpacity,
 } from 'react-native';
+import {isMobileOnly} from 'react-device-detect';
 import WelcomePresenter from "./presenter/WelcomePresenter";
 import Colors from "../../utils/Colors";
 import languages from "../../utils/languages/AppLocalization.js";
@@ -18,53 +19,65 @@ class WelcomeScreen extends Component {
         this.presenter = new WelcomePresenter()
         this.presenter.setView(this)
         this.state = {
-            enableToNext:false,
+            enableToNext: false,
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.presenter.initData().then()
     }
 
-    enableNextButton(){
-        this.setState({enableToNext:true})
+    enableNextButton() {
+        this.setState({enableToNext: true})
     }
 
-    goToResults(){
+    goToResults() {
         this.props.navigation.navigate('Results')
     }
 
-    goToForm(){
+    goToForm() {
         this.props.navigation.navigate('Home', {showResults: true})
     }
 
-    render(){
+    render() {
         let color = this.state.enableToNext ? Colors.buttonEnable : Colors.disable
-        return <View style={styles.container}>
-            <Image
-                style={styles.icon}
-                source={require('../../../../assets/logo.png')}/>
+        return <View style={styles.mainContainer}>
+            <View style={styles.container}>
+                <Image
+                    style={styles.icon}
+                    source={require('../../../../assets/logo.png')}/>
 
-            <TouchableOpacity  disabled={!this.state.enableToNext} activeOpacity={0.7} style={[styles.button, {backgroundColor:color}]}
-                              onPress={() => this.props.navigation.navigate('Login')
-                              }>
-                <Text style={styles.buttonText}>{languages.getLocalized("welcome_start")}</Text>
-            </TouchableOpacity>
+                <TouchableOpacity disabled={!this.state.enableToNext} activeOpacity={0.7}
+                                  style={[styles.button, {backgroundColor: color}]}
+                                  onPress={() => this.props.navigation.navigate('Login')
+                                  }>
+                    <Text style={styles.buttonText}>{languages.getLocalized("welcome_start")}</Text>
+                </TouchableOpacity>
+            </View>
         </View>
+
     }
 }
 
 const styles = StyleSheet.create({
 
-    container: {
+    mainContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
         backgroundColor: Colors.white,
     },
 
-    icon:{
-        marginTop:20,
+    container: {
+        width: isMobileOnly ? '100%' : '60%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        backgroundColor: Colors.white,
+    },
+
+    icon: {
+        marginTop: 20,
         width: 336,
         height: 102,
     },
@@ -75,7 +88,7 @@ const styles = StyleSheet.create({
         height: 66,
         padding: 10,
         borderRadius: 6,
-        backgroundColor:Colors.buttonEnable,
+        backgroundColor: Colors.buttonEnable,
         position: "absolute",
         bottom: 15,
     },
@@ -85,8 +98,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 18,
         color: Colors.white,
-        fontFamily:'Nunito-Bold'
+        fontFamily: 'Nunito-Bold'
     },
 });
 
-export  default  WelcomeScreen
+export default WelcomeScreen

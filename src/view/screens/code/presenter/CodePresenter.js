@@ -1,6 +1,7 @@
 import UserPersistence from "../../../../data/local/UserPersistence";
 import Datasource from "../../../../data/datasource/Datasource";
 import {Keyboard} from "react-native";
+import manifest from "../../../../../app.json";
 import * as Permissions from "expo-permissions";
 import * as Location from "expo-location";
 
@@ -31,24 +32,27 @@ class CodePresenter {
         const dataSource = await Datasource.getInstance()
         let access_token = await userPersistence.getAccessToken()
         dataSource.getCodeValidation(this.code, access_token).then(value => {
-            console.debug("sendCode", value)
+            console.log("sendCode", value)
             if (value.code === undefined) {
                 this.allowGeoLocation()
             } else {
                 this.view.showBackendError()
             }
         }).catch(reason => {
-            console.debug(reason)
+            console.log(reason)
         })
     }
 
     async allowGeoLocation() {
         const permission = await Permissions.askAsync(Permissions.LOCATION)
         if (permission.status === "granted") {
+            Location.setApiKey(manifest.expo.extra.maps.apiKey)
             let location = await Location.getCurrentPositionAsync({})
             let coords = { latitude: location.coords.latitude, longitude: location.coords.longitude }
-            let geoLocal = await Location.reverseGeocodeAsync(coords)
-            if(geoLocal.length > 0){
+            let geoLocal = await Location.reverseGeocodeAsync(coords).catch(reason => {
+                console.log("reverseGeocodeAsync", reason)
+            })
+            if(geoLocal !== undefined && geoLocal.length > 0){
                 let address = geoLocal[0]
                 let city = address.city
                 let country = address.country
@@ -59,20 +63,16 @@ class CodePresenter {
                 const dataSource = await Datasource.getInstance()
                 let access_token = await userPersistence.getAccessToken()
                 dataSource.putUserLocation(body, access_token).then(value => {
-                    console.debug("putUserLocation", value)
-                    this.view.navigateToResults({
-                        longitude: coords.latitude,
-                        latitude: coords.longitude
-                    })
+                    console.log("putUserLocation", value)
+                    this.view.navigateToResults()
                 }).catch(reason => {
-                    console.error(reason)
+                    console.log(reason)
                 })
+            }else{
+                this.view.navigateToResults()
             }
         }else {
-            this.view.navigateToResults({
-                longitude: 0,
-                latitude: 0
-            })
+            this.view.navigateToResults()
         }
     }
 }

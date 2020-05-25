@@ -11,6 +11,7 @@ class WelcomePresenter {
 
     async initData() {
         const userPersistence = await UserPersistence.getInstance()
+        //await userPersistence.clear()
         let hasSession = await userPersistence.hasSession()
         if (hasSession) {
             const dataSource = await Datasource.getInstance()
@@ -23,7 +24,8 @@ class WelcomePresenter {
                     if (value.access_token !== 'valid') {
                         userPersistence.setToken(value.access_token)
                     }
-                    if (value.user_status.completed_questions) {
+                    const user = value.user_status
+                    if (user.completed_questions && user.location_registered && user.phone_registered) {
                         this.view.goToResults()
                     }else{
                         this.view.enableNextButton()

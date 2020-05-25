@@ -8,6 +8,7 @@ import {
     FlatList,
     BackHandler,
 } from 'react-native';
+import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../utils/Colors";
 import ResultsPresenter from "./presenter/ResultsPresenter";
 import languages from "../../utils/languages/AppLocalization.js";
@@ -32,7 +33,7 @@ class ResultsScreen extends Component {
             name: '',
             statusText: '',
             descriptionText: '',
-            statusImage:StatusEmpty
+            statusImage: StatusEmpty
         }
     }
 
@@ -48,7 +49,7 @@ class ResultsScreen extends Component {
         BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
     }
 
-    didAppear(){
+    didAppear() {
         this.presenter.initData().then()
     }
 
@@ -65,31 +66,39 @@ class ResultsScreen extends Component {
     }
 
     setLowStatus() {
-        this.setState({colorStatus: Colors.green,
+        this.setState({
+            colorStatus: Colors.green,
             statusText: 'results_low_risk',
             descriptionText: 'results_low_title',
-            statusImage:StatusGreen})
+            statusImage: StatusGreen
+        })
     }
 
     setMediumStatus() {
-        this.setState({colorStatus: Colors.yellow,
+        this.setState({
+            colorStatus: Colors.yellow,
             statusText: 'results_medium_risk',
             descriptionText: 'results_medium_title',
-            statusImage:StatusYellow})
+            statusImage: StatusYellow
+        })
     }
 
     setHighStatus() {
-        this.setState({colorStatus: Colors.red,
+        this.setState({
+            colorStatus: Colors.red,
             statusText: 'results_high_risk',
             descriptionText: 'results_high_title',
-            statusImage:StatusRed})
+            statusImage: StatusRed
+        })
     }
 
     setInfectedStatus() {
-        this.setState({colorStatus: Colors.black,
+        this.setState({
+            colorStatus: Colors.black,
             statusText: 'results_infected_risk',
             descriptionText: 'results_infected_title',
-            statusImage:StatusBlack})
+            statusImage: StatusBlack
+        })
     }
 
     ItemSeparator = () => {
@@ -99,37 +108,46 @@ class ResultsScreen extends Component {
     }
 
     render() {
-        return <View style={styles.container}>
+        return <View style={styles.mainContainer}>
+            <View style={styles.container}>
 
-            <Image style={styles.icon} source={require('../../../../assets/logo.png')}/>
+                <Image style={styles.icon} source={require('../../../../assets/logo.png')}/>
 
-            <FlatList
-                style={styles.flatList}
-                data={this.state.items}
-                ListHeaderComponent = { <HeaderView name={this.state.name}
-                                                    image={this.state.statusImage}
+                <FlatList
+                    style={styles.flatList}
+                    data={this.state.items}
+                    ListHeaderComponent={<HeaderView name={this.state.name}
+                                                     image={this.state.statusImage}
                                                      descriptionText={this.state.descriptionText}
                                                      statusText={this.state.statusText}
-                                                     colorStatus={this.state.colorStatus} /> }
-                showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={this.ItemSeparator}
-                renderItem={({item}) =>
-                    <ResultItemView title={item.title} level={item.level}/>
-                }
-            />
+                                                     colorStatus={this.state.colorStatus}/>}
+                    showsVerticalScrollIndicator={false}
+                    ItemSeparatorComponent={this.ItemSeparator}
+                    renderItem={({item}) =>
+                        <ResultItemView title={item.title} level={item.level}/>
+                    }
+                />
 
-            <TouchableOpacity activeOpacity={0.7} style={styles.button}
-                              onPress={() => this.props.navigation.navigate('Map')
-                              }>
-                <Text style={styles.buttonText}>{languages.getLocalized("results_status_action")}</Text>
-            </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.7} style={styles.button}
+                                  onPress={() => this.props.navigation.navigate('Map')}>
+                    <Text style={styles.buttonText}>{languages.getLocalized("results_status_action")}</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     }
 }
 
 const styles = StyleSheet.create({
 
+    mainContainer: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: Colors.white,
+    },
+
     container: {
+        width: isMobileOnly ? '100%' : '60%',
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 1,
@@ -148,14 +166,14 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 58,
+        marginTop: 40,
         width: 180,
         height: 55,
     },
 
     flatList: {
         marginTop: 15,
-        marginBottom:10,
+        marginBottom: 10,
         width: "90%"
     },
 
@@ -171,7 +189,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
-        fontFamily:'Nunito-Bold',
+        fontFamily: 'Nunito-Bold',
         textAlign: "center",
         fontSize: 18,
         color: Colors.white,

@@ -47,6 +47,11 @@
         "tsx"
       ]
     },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "extra": {
+      "maps": {
+        "apiKey": "AIzaSyA9UJnyOVUbcSCtrldOxkx0XeSxZFF7qIU"
+      }
+    }
   }
 }

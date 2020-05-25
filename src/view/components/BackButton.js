@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     back:{
         backgroundColor: Colors.white,
         position: "absolute",
-        top:63,
-        left:30
+        top:53,
+        left:25
     },
 });
 

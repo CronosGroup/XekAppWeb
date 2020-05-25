@@ -9,7 +9,7 @@ import {
     Image,
     BackHandler
 } from 'react-native';
-
+import {isMobileOnly} from 'react-device-detect';
 import QuestionView from "../../components/QuestionView";
 import HomePresenter from "./presenter/HomePresenter";
 import Colors from "../../utils/Colors";
@@ -23,7 +23,7 @@ class HomeScreen extends Component {
         this.itemQuestionPressed = this.itemQuestionPressed.bind(this);
         this.presenter = new HomePresenter()
         this.presenter.setView(this)
-        const { showResults } = this.props.route.params
+        const {showResults} = this.props.route.params
         this.state = {
             data: [],
             isLoading: true,
@@ -67,7 +67,7 @@ class HomeScreen extends Component {
         this.props.navigation.navigate('Phone')
     }
 
-    goToResults(){
+    goToResults() {
         this.props.navigation.navigate('Results')
     }
 
@@ -77,46 +77,56 @@ class HomeScreen extends Component {
 
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
-        return <View style={styles.container}>
+        return <View style={styles.mainContainer}>
+            <View style={styles.container}>
 
-            {!this.state.showResults ? <BackButton onClick={() => {
-                this.props.navigation.goBack()
-            }}/> : null}
+                {!this.state.showResults ? <BackButton onClick={() => {
+                    this.props.navigation.goBack()
+                }}/> : null}
 
-            <Image
-                style={styles.icon}
-                source={require('../../../../assets/logo.png')}/>
+                <Image
+                    style={styles.icon}
+                    source={require('../../../../assets/logo.png')}/>
 
-            <Text style={styles.title}>{languages.getLocalized("home_title")}</Text>
+                <Text style={styles.title}>{languages.getLocalized("home_title")}</Text>
 
-            {this.state.isLoading ? <View style={styles.loading}>
-                <ActivityIndicator/>
-            </View> : null }
+                {this.state.isLoading ? <View style={styles.loading}>
+                    <ActivityIndicator/>
+                </View> : null}
 
-            <FlatList
-                style={styles.flatList}
-                data={this.state.data}
-                extraData={this.state.data}
-                width='100%'
-                showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={this.ItemSeparator}
-                renderItem={({item}) =>
-                    <QuestionView title={item.question} items={item.answers} type={item.type}
-                                  childClicked={this.itemQuestionPressed}/>
-                }
-            />
+                <FlatList
+                    style={styles.flatList}
+                    data={this.state.data}
+                    extraData={this.state.data}
+                    width='100%'
+                    showsVerticalScrollIndicator={false}
+                    ItemSeparatorComponent={this.ItemSeparator}
+                    renderItem={({item}) =>
+                        <QuestionView title={item.question} items={item.answers} type={item.type}
+                                      childClicked={this.itemQuestionPressed}/>
+                    }
+                />
 
-            <TouchableOpacity activeOpacity={0.7} style={[styles.button, {backgroundColor: color}]}
-                              onPress={() => this.presenter.postAnswers()}>
-                <Text style={styles.buttonText}>{languages.getLocalized("home_get_results")}</Text>
-            </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.7} style={[styles.button, {backgroundColor: color}]}
+                                  onPress={() => this.presenter.postAnswers()}>
+                    <Text style={styles.buttonText}>{languages.getLocalized("home_get_results")}</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     }
 }
 
 const styles = StyleSheet.create({
 
+    mainContainer: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: Colors.white,
+    },
+
     container: {
+        width: isMobileOnly ? '100%' : '60%',
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 1,
@@ -133,7 +143,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 58,
+        marginTop: 40,
         width: 180,
         height: 55,
     },
@@ -148,7 +158,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         width: '90%',
         fontSize: 16,
-        fontFamily:'Nunito-Bold',
+        fontFamily: 'Nunito-Bold',
         marginTop: 25,
         marginBottom: 25,
         color: Colors.buttonEnable
@@ -165,7 +175,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
-        fontFamily:'Nunito-Bold',
+        fontFamily: 'Nunito-Bold',
         textAlign: "center",
         fontSize: 20,
         color: Colors.white,

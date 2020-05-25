@@ -11,11 +11,8 @@ import {
 import Colors from "../../utils/Colors";
 import EmailPresenter from "./presenter/EmailPresenter";
 import {Snackbar} from "react-native-paper";
-import Numeral from "../../../../assets/hashtag-01.svg";
 import BackButton from "../../components/BackButton";
-import CheckBoxItemView from "../../components/CheckBoxItemView";
 import languages from "../../utils/languages/AppLocalization";
-
 
 class EmailScreen extends Component {
 
@@ -112,7 +109,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 58,
+        marginTop: 40,
         width: 180,
         height: 55,
     },

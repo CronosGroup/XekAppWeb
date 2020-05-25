@@ -8,6 +8,7 @@ import {
     Image,
     ScrollView
 } from 'react-native';
+import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../../utils/Colors";
 import RecoverCodePresenter from "./presenter/RecoverCodePresenter";
 import {Snackbar} from "react-native-paper";
@@ -57,13 +58,15 @@ class RecoverCodeScreen extends Component {
         })
     }
 
-    navigateToResults(params) {
-        this.props.navigation.navigate('Results', params)
+    navigateToResults() {
+        this.props.navigation.navigate('Results')
     }
 
     render() {
         let colorCode = this.state.enableToSendCode ? Colors.buttonEnable : Colors.disable
-        return <View style={styles.container}>
+        return <View style={styles.mainContainer}>
+
+            <View style={styles.container}>
 
                 <BackButton onClick={() => {
                     this.props.navigation.goBack()
@@ -118,12 +121,21 @@ class RecoverCodeScreen extends Component {
                     {this.state.message}
                 </Snackbar>
             </View>
+        </View>
     }
 }
 
 const styles = StyleSheet.create({
 
+    mainContainer: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: Colors.white,
+    },
+
     container: {
+        width: isMobileOnly ? '100%' : '60%',
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 1,
@@ -131,7 +143,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 58,
+        marginTop: 40,
         width: 180,
         height: 55,
     },

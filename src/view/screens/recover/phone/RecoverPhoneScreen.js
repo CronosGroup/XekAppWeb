@@ -8,8 +8,9 @@ import {
     TouchableWithoutFeedback,
     Keyboard, ScrollView
 } from 'react-native';
+import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../../utils/Colors";
-import {isValidPhoneNumber}  from 'react-phone-number-input'
+import {isValidPhoneNumber} from 'react-phone-number-input'
 import {Snackbar} from "react-native-paper";
 import BackButton from "../../../components/BackButton";
 import RecoverPhonePresenter from "./presenter/RecoverPhonePresenter";
@@ -29,8 +30,8 @@ class RecoverPhoneScreen extends Component {
             errorBackend: false,
             snackColor: Colors.red,
             message: '',
-            phone:'',
-            country:null,
+            phone: '',
+            country: null,
         }
     }
 
@@ -46,53 +47,62 @@ class RecoverPhoneScreen extends Component {
         this.props.navigation.navigate('RecoverCode')
     }
 
-    _onCallBack(country){
+    _onCallBack(country) {
         this.setState({country: country})
     }
 
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
         return <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <View style={styles.container}>
-                <BackButton onClick={() => {
-                    this.props.navigation.goBack()
-                }}/>
 
-                <Image
-                    style={styles.icon}
-                    source={require('../../../../../assets/logo.png')}/>
+            <View style={styles.mainContainer}>
 
-                <ScrollView style={styles.scrollView} contentContainerStyle={styles.container_scrollView}>
+                <View style={styles.container}>
+                    <BackButton onClick={() => {
+                        this.props.navigation.goBack()
+                    }}/>
 
-                    <Text style={styles.title}>{languages.getLocalized("recover_phone_title")}</Text>
+                    <Image
+                        style={styles.icon}
+                        source={require('../../../../../assets/logo.png')}/>
 
-                    <Text style={styles.subTitle}>{languages.getLocalized("recover_phone_subtitle")}</Text>
+                    <ScrollView style={styles.scrollView} contentContainerStyle={styles.container_scrollView}>
 
-                    <View style={styles.textInputContainer}>
-                        <CustomPhoneInput country={this.state.country}
-                                          currentCountry={Localization.region} onChangeText={(phone => {
-                            this.setState({phoneError: !isValidPhoneNumber(phone), enableToSend: isValidPhoneNumber(phone), phone:phone})
-                        })} iconPressed={() => this.props.navigation.navigate('CountrySelector', {callback: this._onCallBack.bind(this)})}
-                        />
-                    </View>
-                    {this.state.phoneError ?
-                        <Text style={styles.error}>{languages.getLocalized("recover_phone_error")}</Text> : null}
+                        <Text style={styles.title}>{languages.getLocalized("recover_phone_title")}</Text>
 
-                    <Text style={styles.message}>{languages.getLocalized("recover_phone_secure_message")}</Text>
-                </ScrollView>
+                        <Text style={styles.subTitle}>{languages.getLocalized("recover_phone_subtitle")}</Text>
 
-                <TouchableOpacity disabled={!this.state.enableToSend} activeOpacity={0.7}
-                                  style={[styles.button, {backgroundColor: color}]}
-                                  onPress={() => this.presenter.savePhone(this.state.phone)}>
-                    <Text style={styles.buttonText}>{languages.getLocalized("recover_phone_send_code")}</Text>
-                </TouchableOpacity>
-                <Snackbar
-                    visible={this.state.errorBackend}
-                    onDismiss={() => this.setState({errorBackend: false})}
-                    duration={3000}
-                    style={{backgroundColor: this.state.snackColor}}>
-                    {this.state.message}
-                </Snackbar>
+                        <View style={styles.textInputContainer}>
+                            <CustomPhoneInput country={this.state.country}
+                                              currentCountry={Localization.region} onChangeText={(phone => {
+                                this.setState({
+                                    phoneError: !isValidPhoneNumber(phone),
+                                    enableToSend: isValidPhoneNumber(phone),
+                                    phone: phone
+                                })
+                            })}
+                                              iconPressed={() => this.props.navigation.navigate('CountrySelector', {callback: this._onCallBack.bind(this)})}
+                            />
+                        </View>
+                        {this.state.phoneError ?
+                            <Text style={styles.error}>{languages.getLocalized("recover_phone_error")}</Text> : null}
+
+                        <Text style={styles.message}>{languages.getLocalized("recover_phone_secure_message")}</Text>
+                    </ScrollView>
+
+                    <TouchableOpacity disabled={!this.state.enableToSend} activeOpacity={0.7}
+                                      style={[styles.button, {backgroundColor: color}]}
+                                      onPress={() => this.presenter.savePhone(this.state.phone)}>
+                        <Text style={styles.buttonText}>{languages.getLocalized("recover_phone_send_code")}</Text>
+                    </TouchableOpacity>
+                    <Snackbar
+                        visible={this.state.errorBackend}
+                        onDismiss={() => this.setState({errorBackend: false})}
+                        duration={3000}
+                        style={{backgroundColor: this.state.snackColor}}>
+                        {this.state.message}
+                    </Snackbar>
+                </View>
             </View>
         </TouchableWithoutFeedback>
     }
@@ -100,7 +110,15 @@ class RecoverPhoneScreen extends Component {
 
 const styles = StyleSheet.create({
 
+    mainContainer: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: Colors.white,
+    },
+
     container: {
+        width: isMobileOnly ? '100%' : '60%',
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 1,
@@ -108,7 +126,7 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 58,
+        marginTop: 40,
         width: 180,
         height: 55,
     },

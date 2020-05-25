@@ -42,7 +42,7 @@ class PhoneInput extends Component {
                     <View><Text>{this.currentCountry.flag}</Text></View>
                     <Input
                         placeholder={languages.getLocalized("recover_phone_phone_placeholder")}
-                        placeholderTextColor='#adb4bc'
+                        placeholderTextColor={Colors.placeholder}
                         keyboardType={'phone-pad'}
                         returnKeyType='done'
                         autoCapitalize='none'

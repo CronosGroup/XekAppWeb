@@ -14,7 +14,7 @@ class Colors {
     static textFormItem= 'rgb(53, 60, 67)'
     static radiusFill = 'rgba(60, 178, 180, 0.2)'
     static radiusStroke = 'rgba(60, 178, 180, 1)'
-
+    static placeholder = '#adb4bc'
 }
 
 export default Colors;

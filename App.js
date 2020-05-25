@@ -122,59 +122,67 @@ class App extends Component {
 const welcomeOptions = {
     title: 'Welcome',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const loginOptions = {
     title: 'Login',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const homeOptions = {
     title: 'Home',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const phoneOptions = {
     title: 'Phone registration',
-    gestureEnabled: false,
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const codeOptions = {
     title: 'Code',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const emailOptions = {
     title: 'Email',
-    gestureEnabled: false,
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const resultsOptions = {
     title: 'Results',
-    gestureEnabled: false,
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const mapOptions = {
     title: 'Map',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const recoverPhoneOptions = {
     title: 'Phone',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const recoverCodeOptions = {
     title: 'Code',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 const countrySelectorOptions = {
     title: 'CountrySelector',
     headerShown: false,
+    gestureEnabled: false,
 }
 
 export default App;
