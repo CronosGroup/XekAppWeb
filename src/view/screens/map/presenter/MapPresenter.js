@@ -17,14 +17,9 @@ class MapPresenter{
         const permission = await Permissions.askAsync(Permissions.LOCATION)
         if (permission.status === "granted") {
             let location = await Location.getCurrentPositionAsync({})
-            this.region = { latitude: location.coords.latitude, longitude: location.coords.longitude,
-                latitudeDelta : LATITUD_DELTA, longitudeDelta: LONGITUDE_DELTA}
+            this.region = { lat: location.coords.latitude, lng: location.coords.longitude}
             this.view.setRegion(this.region)
         }
-
-        //Only for test
-        //this.view.setRegion({lat: 37.762391, lng: -122.439192})
-        //this.view.setMarkers([{lat: 37.762391, lng: -122.439192}, {lat: 37.759703, lng: -122.428093}])
 
         const userPersistence = await UserPersistence.getInstance()
         const dataSource = await Datasource.getInstance()
@@ -32,8 +27,11 @@ class MapPresenter{
         dataSource.getArea(access_token).then(value => {
             console.debug(value)
             if(value.code === undefined){
-                this.view.setUserLocation({latitude: this.region.latitude, longitude: this.region.longitude, radius: radius})
-                this.view.setMarkers(value.results)
+                this.view.setUserLocation({lat: this.region.latitude, lng: this.region.longitude, radius: radius})
+                let results = value.results.map(mark => {
+                    return {lat : mark.latitude, lng: mark.longitude, level:mark.level}
+                })
+                this.view.setMarkers(results)
             }
         }).catch(reason => {
             console.debug(reason)

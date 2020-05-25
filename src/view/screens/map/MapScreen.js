@@ -7,11 +7,12 @@ import {
     TouchableOpacity,
     Dimensions
 } from 'react-native';
-import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper, Circle} from 'google-maps-react';
 import Colors from "../../utils/Colors";
 import MapPresenter from "./presenter/MapPresenter";
 import BackButton from "../../components/BackButton";
 import languages from "../../utils/languages/AppLocalization";
+import Utils from "../../utils/Utils";
 
 class MapScreen extends Component{
 
@@ -68,12 +69,32 @@ class MapScreen extends Component{
                  zoom={20}>
 
                 {this.state.markers.map((marker) => {
-                    return (
-                        (<Marker
+
+                   let icon =  marker.level === Utils.Levels.low.valueOf()
+                        ? require("../../../../assets/status_green.png")
+                        : marker.level === Utils.Levels.medium.valueOf()
+                        ? require("../../../../assets/status_yellow.png")
+                        : marker.level === Utils.Levels.high.valueOf()
+                            ? require("../../../../assets/status_red.png") : require("../../../../assets/status_black.png")
+
+                    return (<Marker
                             position={marker}
-                        />)
-                    )
+                            icon={{
+                                url: icon,
+                                anchor: new this.props.google.maps.Point(32,32),
+                                scaledSize: new this.props.google.maps.Size(25,35)
+                            }}/>)
                 })}
+
+                <Circle
+                    radius={this.state.userLocation.radius}
+                    center={this.state.region}
+                    strokeColor={Colors.radiusStroke}
+                    strokeOpacity={1}
+                    strokeWeight={2.5}
+                    fillColor={Colors.radiusFill}
+                    fillOpacity={0.8}
+                />
 
             </Map>
 
@@ -84,45 +105,6 @@ class MapScreen extends Component{
         </View>
     }
 }
-
-/*
-
-<MapView style={styles.mapStyle}
-                     initialRegion={this.state.region}
-                     region={this.state.region}
-                     showsUserLocation={true} >
-
-                {this.state.markers.map((marker) => {
-                    return (
-                        (<Marker
-                            key={marker}
-                            coordinate={marker}
-                            //title={marker.result}
-                            pinColor={marker.level === Utils.Levels.low.valueOf()
-                                ? Colors.green
-                                : marker.level === Utils.Levels.medium.valueOf()
-                                    ? Colors.yellow
-                                    : marker.level === Utils.Levels.high.valueOf()
-                                        ? Colors.red : Colors.black
-                            }
-                        />)
-                    )
-                })}
-
-                <MapView.Circle
-                    center={{
-                        latitude: this.state.userLocation.latitude,
-                        longitude: this.state.userLocation.longitude
-                    }}
-                    radius={this.state.userLocation.radius}
-                    strokeWidth={1}
-                    strokeColor={Colors.radiusStroke}
-                    fillColor={Colors.radiusFill}/>
-
-            </MapView>
-
-
-* */
 
 const marginTopIcon = 58
 const heightIcon = 55
