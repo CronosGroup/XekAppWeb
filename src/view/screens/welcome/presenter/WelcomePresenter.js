@@ -24,8 +24,8 @@ class WelcomePresenter {
                     if (value.access_token !== 'valid') {
                         userPersistence.setToken(value.access_token)
                     }
-                    const user = value.user_status
-                    if (user.completed_questions && user.location_registered && user.phone_registered) {
+                    const status = value.user_status
+                    if (status.completed_questions && status.phone_registered) {
                         this.view.goToResults()
                     }else{
                         this.view.enableNextButton()

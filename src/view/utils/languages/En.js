@@ -129,6 +129,8 @@ class En {
          ***********************/
 
         map_update_form_action:"Update your info",
+        map_location_enable_message:"In order to display the results, you must allow XekApp to access your location.",
+        map_location_error_message:"An error has occurred try again"
 
     }
 }

@@ -12,6 +12,7 @@ import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../utils/Colors";
 import ResultsPresenter from "./presenter/ResultsPresenter";
 import languages from "../../utils/languages/AppLocalization.js";
+import {Snackbar} from 'react-native-paper';
 import ResultItemView from "../../components/ResultItemView";
 import HeaderView from "../../components/HeaderView";
 import StatusGreen from '../../../../assets/status_green.svg'
@@ -33,7 +34,9 @@ class ResultsScreen extends Component {
             name: '',
             statusText: '',
             descriptionText: '',
-            statusImage: StatusEmpty
+            statusImage: StatusEmpty,
+            errorBackend: false,
+            errorMessage: ''
         }
     }
 
@@ -107,6 +110,24 @@ class ResultsScreen extends Component {
         )
     }
 
+    showLocationError(){
+        this.setState({
+            errorBackend: true,
+            errorMessage: languages.getLocalized("map_location_error_message")
+        })
+    }
+
+    showLocationNoAllowError(){
+        this.setState({
+            errorBackend: true,
+            errorMessage: languages.getLocalized("map_location_enable_message")
+        })
+    }
+
+    navigateToMap(){
+        this.props.navigation.navigate('Map')
+    }
+
     render() {
         return <View style={styles.mainContainer}>
             <View style={styles.container}>
@@ -116,6 +137,7 @@ class ResultsScreen extends Component {
                 <FlatList
                     style={styles.flatList}
                     data={this.state.items}
+                    keyExtractor={(item, index) => index.toString()}
                     ListHeaderComponent={<HeaderView name={this.state.name}
                                                      image={this.state.statusImage}
                                                      descriptionText={this.state.descriptionText}
@@ -129,9 +151,18 @@ class ResultsScreen extends Component {
                 />
 
                 <TouchableOpacity activeOpacity={0.7} style={styles.button}
-                                  onPress={() => this.props.navigation.navigate('Map')}>
+                                  onPress={() => this.presenter.validateLocation()}>
                     <Text style={styles.buttonText}>{languages.getLocalized("results_status_action")}</Text>
                 </TouchableOpacity>
+
+                <Snackbar
+                    visible={this.state.errorBackend}
+                    onDismiss={() => this.setState({errorBackend: false})}
+                    duration={3000}
+                    style={{backgroundColor: Colors.red}}>
+                    {this.state.errorMessage}
+                </Snackbar>
+
             </View>
         </View>
     }

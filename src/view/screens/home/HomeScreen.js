@@ -98,6 +98,7 @@ class HomeScreen extends Component {
                     style={styles.flatList}
                     data={this.state.data}
                     extraData={this.state.data}
+                    keyExtractor={(item, index) => index.toString()}
                     width='100%'
                     showsVerticalScrollIndicator={false}
                     ItemSeparatorComponent={this.ItemSeparator}

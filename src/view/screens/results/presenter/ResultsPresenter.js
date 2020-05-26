@@ -2,6 +2,7 @@ import UserPersistence from "../../../../data/local/UserPersistence";
 import Datasource from "../../../../data/datasource/Datasource";
 import languages from "../../../utils/languages/AppLocalization";
 import Utils from "../../../utils/Utils";
+import locationManager from "../../../utils/location/LocationManager";
 
 class ResultsPresenter {
 
@@ -56,6 +57,26 @@ class ResultsPresenter {
         }).catch(reason => {
             console.log(reason)
         })
+    }
+
+    async validateLocation(){
+        const location = await locationManager.requestLocation()
+        if (location.permission === 'granted'){
+            if (location.error === undefined){
+                const userPersistence = await UserPersistence.getInstance()
+                const dataSource = await Datasource.getInstance()
+                let access_token = await userPersistence.getAccessToken()
+                dataSource.putUserLocation(location.location, access_token).then(value => {
+                    this.view.navigateToMap()
+                }).catch(reason => {
+                    this.view.showLocationError()
+                })
+            }else{
+                this.view.showLocationError()
+            }
+        }else{
+            this.view.showLocationNoAllowError()
+        }
     }
 }
 

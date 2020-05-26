@@ -1,9 +1,7 @@
 import UserPersistence from "../../../../data/local/UserPersistence";
 import Datasource from "../../../../data/datasource/Datasource";
 import {Keyboard} from "react-native";
-import manifest from "../../../../../app.json";
-import * as Permissions from "expo-permissions";
-import * as Location from "expo-location";
+import locationManager from "../../../utils/location/LocationManager";
 
 class CodePresenter {
 
@@ -43,35 +41,22 @@ class CodePresenter {
         })
     }
 
-    async allowGeoLocation() {
-        const permission = await Permissions.askAsync(Permissions.LOCATION)
-        if (permission.status === "granted") {
-            Location.setApiKey(manifest.expo.extra.maps.apiKey)
-            let location = await Location.getCurrentPositionAsync({})
-            let coords = { latitude: location.coords.latitude, longitude: location.coords.longitude }
-            let geoLocal = await Location.reverseGeocodeAsync(coords).catch(reason => {
-                console.log("reverseGeocodeAsync", reason)
-            })
-            if(geoLocal !== undefined && geoLocal.length > 0){
-                let address = geoLocal[0]
-                let city = address.city
-                let country = address.country
-                let body = { "city": city, "country": country,
-                    "latitude": coords.latitude,
-                    "longitude": coords.longitude}
+    async allowGeoLocation(){
+        const location = await locationManager.requestLocation()
+        if (location.permission === 'granted'){
+            if (location.error === undefined){
                 const userPersistence = await UserPersistence.getInstance()
                 const dataSource = await Datasource.getInstance()
                 let access_token = await userPersistence.getAccessToken()
-                dataSource.putUserLocation(body, access_token).then(value => {
-                    console.log("putUserLocation", value)
+                dataSource.putUserLocation(location.location, access_token).then(value => {
                     this.view.navigateToResults()
                 }).catch(reason => {
-                    console.log(reason)
+                    this.view.navigateToResults()
                 })
             }else{
                 this.view.navigateToResults()
             }
-        }else {
+        }else{
             this.view.navigateToResults()
         }
     }
