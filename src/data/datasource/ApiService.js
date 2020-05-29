@@ -1,9 +1,9 @@
 import Questions from "../../resources/Questions";
+import manifest from "../../../app.json"
 
 class ApiService {
 
-    static base_Url = 'https://covid.tink-app.com/v1/'
-    //static base_Url = 'https://xekapp.tinkerlink.com/v1/'
+    static base_Url = manifest.expo.extra.urlProd+"/v1/"
     static questionsEndpoint = 'questions'
     static checkEndpoint = 'check'
     static usersEndpoint = 'users'
