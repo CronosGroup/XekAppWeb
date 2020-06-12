@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/static/js/app.61b70818.chunk.js",
-    "app.js.map": "/static/js/app.61b70818.chunk.js.map",
+    "app.js": "/static/js/app.2920b1ba.chunk.js",
+    "app.js.map": "/static/js/app.2920b1ba.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.c09eef9e.js",
     "runtime~app.js.map": "/static/js/runtime~app.c09eef9e.js.map",
-    "static/js/2.c499ebe8.chunk.js": "/static/js/2.c499ebe8.chunk.js",
-    "static/js/2.c499ebe8.chunk.js.map": "/static/js/2.c499ebe8.chunk.js.map",
+    "static/js/2.6eff11bd.chunk.js": "/static/js/2.6eff11bd.chunk.js",
+    "static/js/2.6eff11bd.chunk.js.map": "/static/js/2.6eff11bd.chunk.js.map",
     "fonts/AntDesign.ttf": "/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/./fonts/Feather.ttf",
@@ -29,11 +29,15 @@
     "static/media/back-chevron.png": "/static/media/back-chevron.2379ae89.png",
     "static/media/back-icon-mask.png": "/static/media/back-icon-mask.5223c8d9.png",
     "static/media/back-icon.png": "/static/media/back-icon.35ba0eae.png",
-    "static/media/logo.png": "/static/media/logo.d6e818fa.png"
+    "static/media/logo.png": "/static/media/logo.d6e818fa.png",
+    "static/media/status_black.png": "/static/media/status_black.f59afdb6.png",
+    "static/media/status_green.png": "/static/media/status_green.f1a4c8e9.png",
+    "static/media/status_red.png": "/static/media/status_red.a63224fc.png",
+    "static/media/status_yellow.png": "/static/media/status_yellow.90136edb.png"
   },
   "entrypoints": [
     "static/js/runtime~app.c09eef9e.js",
-    "static/js/2.c499ebe8.chunk.js",
-    "static/js/app.61b70818.chunk.js"
+    "static/js/2.6eff11bd.chunk.js",
+    "static/js/app.2920b1ba.chunk.js"
   ]
 }
