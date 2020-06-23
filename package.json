@@ -1,5 +1,5 @@
 {
-  "homepage": "http://jorgesanji.github.io/XekAppWeb",
+  "homepage": "https://cronosgroup.github.io/XekAppWeb",
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
