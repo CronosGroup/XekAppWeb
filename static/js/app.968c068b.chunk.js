@@ -731,7 +731,7 @@ module.exports = __webpack_require__(710);
 /***/ 428:
 /***/ (function(module, exports) {
 
-if('serviceWorker'in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/expo-service-worker.js',{scope:'/'}).then(function(info){}).catch(function(error){console.info('Failed to register service-worker',error);});});}
+if('serviceWorker'in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/XekAppWeb/expo-service-worker.js',{scope:'/XekAppWeb/'}).then(function(info){}).catch(function(error){console.info('Failed to register service-worker',error);});});}
 
 /***/ }),
 
@@ -785,4 +785,4 @@ module.exports = __webpack_require__.p + "static/media/logo.d6e818fa.png";
 /***/ })
 
 },[[427,1,2]]]);
-//# sourceMappingURL=app.2920b1ba.chunk.js.map
+//# sourceMappingURL=app.968c068b.chunk.js.map
