@@ -8,7 +8,7 @@ class LocationManager {
         const permission = await Permissions.askAsync(Permissions.LOCATION)
         if (permission.status === "granted") {
             Location.setApiKey(manifest.expo.extra.maps.apiKey)
-            let location = await Location.getCurrentPositionAsync({})
+            let location = await Location.getCurrentPositionAsync({enableHighAccuracy: true})
             let coords = {latitude: location.coords.latitude, longitude: location.coords.longitude}
             let geoLocal = await Location.reverseGeocodeAsync(coords).catch(reason => {
                 console.log("reverseGeocodeAsync error", reason)

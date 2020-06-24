@@ -11,15 +11,16 @@ class RecoverPhonePresenter {
         Keyboard.dismiss()
         const dataSource = await Datasource.getInstance()
         let body = {"phone": phone}
+        console.log("body", body)
         dataSource.postRecover(body).then(value => {
-            console.debug("savePhone", value)
+            console.log("savePhone", value)
             if (value.code === undefined) {
                 this.view.navigateToCode()
             } else {
                 this.view.showBackendError()
             }
         }).catch(reason => {
-            console.debug(reason)
+            console.log(reason)
         })
     }
 }
