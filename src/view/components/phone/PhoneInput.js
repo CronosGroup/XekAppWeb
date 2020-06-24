@@ -2,16 +2,12 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
+    TextInput,
     Text,
+    TouchableOpacity,
 } from 'react-native'
-import {
-    Container,
-    Input,
-    Icon,
-    Item
-} from 'native-base'
+
 import Colors from "../../utils/Colors";
-import * as Localization from "expo-localization";
 import languages from "../../utils/languages/AppLocalization";
 import data from './Countries'
 
@@ -22,7 +18,7 @@ class PhoneInput extends Component {
     }
 
     render() {
-        let region = this.props.currentCountry !== null ?  this.props.currentCountry : Localization.region
+        let region = 'US'
         if(this.props.country !== null){
             this.currentCountry = this.props.country
         }else{
@@ -31,28 +27,16 @@ class PhoneInput extends Component {
             )[0]
         }
         return <View style={styles.container}>
-            <Container style={styles.infoContainer}>
-                <Item>
-                    <Icon
-                        onPress={() => this.props.iconPressed()}
-                        active
-                        name='md-arrow-dropdown'
-                        style={styles.iconStyle}
-                    />
-                    <View><Text>{this.currentCountry.flag}</Text></View>
-                    <Input
-                        placeholder={languages.getLocalized("recover_phone_phone_placeholder")}
-                        placeholderTextColor={Colors.placeholder}
-                        keyboardType={'phone-pad'}
-                        returnKeyType='done'
-                        autoCapitalize='none'
-                        autoCorrect={false}
-                        secureTextEntry={false}
-                        onChangeText={(val) => this.onChangeText(val)}
-                        style={styles.inputStyle}
-                    />
-                </Item>
-            </Container>
+            <View style={styles.infoContainer}>
+                <TouchableOpacity onPress={() =>  this.props.iconPressed()}>
+                    <Text>{this.currentCountry.flag}</Text>
+                </TouchableOpacity>
+                <TextInput
+                    placeholder={languages.getLocalized("recover_phone_phone_placeholder")}
+                    style={styles.inputStyle}
+                    keyboardType={"numeric"}
+                    onChangeText={text => this.onChangeText(text)}/>
+            </View>
         </View>
     }
 }
@@ -70,7 +54,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 30,
         flexDirection: 'row',
-        justifyContent: 'left',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: Colors.white,
     },
@@ -81,6 +65,7 @@ const styles = StyleSheet.create({
     },
 
     inputStyle: {
+        marginLeft: 10,
         flex: 1,
         fontSize: 17,
         color: Colors.textFormItem,
