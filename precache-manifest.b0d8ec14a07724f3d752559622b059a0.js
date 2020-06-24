@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "1458d1be25f8f702c225",
-    "url": "/XekAppWeb/static/js/app.0fe0caa4.chunk.js"
+    "revision": "0bb8992bea89db0d0794",
+    "url": "/XekAppWeb/static/js/app.19aa710a.chunk.js"
   },
   {
     "revision": "fb25d142a62e24de3e7d",
     "url": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js"
   },
   {
-    "revision": "a1f59860efb6bb355a42",
-    "url": "/XekAppWeb/static/js/2.79a67cc7.chunk.js"
+    "revision": "064df204af251be4b34a",
+    "url": "/XekAppWeb/static/js/2.eaa6ca5b.chunk.js"
   },
   {
     "revision": "d6e818fa56224449665d13973b96291f",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/XekAppWeb/favicon.ico"
   },
   {
-    "revision": "2896b7f2c7ff155b3fa969b02e7a16bf",
+    "revision": "5468946807bc549d15129f6ee3ce9e0a",
     "url": "/XekAppWeb/index.html"
   },
   {
