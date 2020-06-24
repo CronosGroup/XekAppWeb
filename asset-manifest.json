@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/XekAppWeb/static/js/app.19aa710a.chunk.js",
-    "app.js.map": "/XekAppWeb/static/js/app.19aa710a.chunk.js.map",
+    "app.js": "/XekAppWeb/static/js/app.aa796b08.chunk.js",
+    "app.js.map": "/XekAppWeb/static/js/app.aa796b08.chunk.js.map",
     "runtime~app.js": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js",
     "runtime~app.js.map": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js.map",
-    "static/js/2.eaa6ca5b.chunk.js": "/XekAppWeb/static/js/2.eaa6ca5b.chunk.js",
-    "static/js/2.eaa6ca5b.chunk.js.map": "/XekAppWeb/static/js/2.eaa6ca5b.chunk.js.map",
+    "static/js/2.b7b14f7f.chunk.js": "/XekAppWeb/static/js/2.b7b14f7f.chunk.js",
+    "static/js/2.b7b14f7f.chunk.js.map": "/XekAppWeb/static/js/2.b7b14f7f.chunk.js.map",
     "fonts/MaterialCommunityIcons.ttf": "/XekAppWeb/./fonts/MaterialCommunityIcons.ttf",
     "fonts/Nunito-Bold.ttf": "/XekAppWeb/./fonts/Nunito-Bold.ttf",
     "fonts/Nunito-Regular.ttf": "/XekAppWeb/./fonts/Nunito-Regular.ttf",
@@ -26,7 +26,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.1bf5d56b.js",
-    "static/js/2.eaa6ca5b.chunk.js",
-    "static/js/app.19aa710a.chunk.js"
+    "static/js/2.b7b14f7f.chunk.js",
+    "static/js/app.aa796b08.chunk.js"
   ]
 }
