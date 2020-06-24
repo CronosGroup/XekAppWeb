@@ -1,25 +1,14 @@
 {
   "files": {
-    "app.js": "/XekAppWeb/static/js/app.b201d83d.chunk.js",
-    "app.js.map": "/XekAppWeb/static/js/app.b201d83d.chunk.js.map",
+    "app.js": "/XekAppWeb/static/js/app.5b165e75.chunk.js",
+    "app.js.map": "/XekAppWeb/static/js/app.5b165e75.chunk.js.map",
     "runtime~app.js": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js",
     "runtime~app.js.map": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js.map",
-    "static/js/2.62f66fa6.chunk.js": "/XekAppWeb/static/js/2.62f66fa6.chunk.js",
-    "static/js/2.62f66fa6.chunk.js.map": "/XekAppWeb/static/js/2.62f66fa6.chunk.js.map",
-    "fonts/AntDesign.ttf": "/XekAppWeb/./fonts/AntDesign.ttf",
-    "fonts/Entypo.ttf": "/XekAppWeb/./fonts/Entypo.ttf",
-    "fonts/Feather.ttf": "/XekAppWeb/./fonts/Feather.ttf",
-    "fonts/FontAwesome.ttf": "/XekAppWeb/./fonts/FontAwesome.ttf",
-    "fonts/FontAwesome5_Brands.ttf": "/XekAppWeb/./fonts/FontAwesome5_Brands.ttf",
-    "fonts/FontAwesome5_Solid.ttf": "/XekAppWeb/./fonts/FontAwesome5_Solid.ttf",
-    "fonts/Fontisto.ttf": "/XekAppWeb/./fonts/Fontisto.ttf",
-    "fonts/Foundation.ttf": "/XekAppWeb/./fonts/Foundation.ttf",
-    "fonts/Ionicons.ttf": "/XekAppWeb/./fonts/Ionicons.ttf",
+    "static/js/2.94a0fe50.chunk.js": "/XekAppWeb/static/js/2.94a0fe50.chunk.js",
+    "static/js/2.94a0fe50.chunk.js.map": "/XekAppWeb/static/js/2.94a0fe50.chunk.js.map",
     "fonts/MaterialCommunityIcons.ttf": "/XekAppWeb/./fonts/MaterialCommunityIcons.ttf",
-    "fonts/MaterialIcons.ttf": "/XekAppWeb/./fonts/MaterialIcons.ttf",
     "fonts/Nunito-Bold.ttf": "/XekAppWeb/./fonts/Nunito-Bold.ttf",
     "fonts/Nunito-Regular.ttf": "/XekAppWeb/./fonts/Nunito-Regular.ttf",
-    "fonts/SimpleLineIcons.ttf": "/XekAppWeb/./fonts/SimpleLineIcons.ttf",
     "favicon-16.png": "/XekAppWeb/favicon-16.png",
     "favicon-32.png": "/XekAppWeb/favicon-32.png",
     "favicon.ico": "/XekAppWeb/favicon.ico",
@@ -37,7 +26,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.1bf5d56b.js",
-    "static/js/2.62f66fa6.chunk.js",
-    "static/js/app.b201d83d.chunk.js"
+    "static/js/2.94a0fe50.chunk.js",
+    "static/js/app.5b165e75.chunk.js"
   ]
 }
