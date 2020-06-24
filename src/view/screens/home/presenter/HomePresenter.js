@@ -41,13 +41,14 @@ class HomePresenter {
         let access_token = await userPersistence.getAccessToken()
         const dataSource = await Datasource.getInstance()
         dataSource.postAnswers(body, access_token).then(value => {
+            console.log("postAnswers_response", value)
             if (value.successful === true && value.first_submit) {
                 this.view.goToPhoneRegistration()
             }else if (value.successful === true && !value.first_submit){
                 this.view.goToResults()
             }
         }).catch(reason => {
-            console.log(reason)
+            console.log("error", reason)
         })
     }
 

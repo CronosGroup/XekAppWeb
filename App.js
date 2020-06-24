@@ -113,6 +113,7 @@ class App extends Component {
                     <Stack.Screen name="RecoverPhone" component={RecoverPhoneScreen} options={recoverPhoneOptions}/>
                     <Stack.Screen name="RecoverCode" component={RecoverCodeScreen} options={recoverCodeOptions}/>
                     <Stack.Screen name="CountrySelector" component={CountrySelector} options={countrySelectorOptions}/>
+                    <Stack.Screen name="TestScreen" component={CountrySelector} options={countrySelectorOptions}/>
                 </Stack.Navigator>
             </NavigationContainer>
         );
