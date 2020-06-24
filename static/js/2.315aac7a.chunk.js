@@ -133,7 +133,7 @@ module.exports = _possibleConstructorReturn;
 var applyLayout = __webpack_require__(121);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/modules/applyNativeMethods/index.js + 1 modules
-var applyNativeMethods = __webpack_require__(42);
+var applyNativeMethods = __webpack_require__(41);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/prop-types/index.js
 var prop_types = __webpack_require__(1);
@@ -700,7 +700,7 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 // CONCATENATED MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/exports/Button/index.js
 function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(superClass.prototype);subClass.prototype.constructor=subClass;subClass.__proto__=superClass;}var Button_Button=function(_Component){_inheritsLoose(Button,_Component);function Button(){return _Component.apply(this,arguments)||this;}var _proto=Button.prototype;_proto.render=function render(){var _this$props=this.props,accessibilityLabel=_this$props.accessibilityLabel,color=_this$props.color,disabled=_this$props.disabled,onPress=_this$props.onPress,testID=_this$props.testID,title=_this$props.title;return react_default.a.createElement(TouchableOpacity["a" /* default */],{accessibilityLabel:accessibilityLabel,accessibilityRole:"button",disabled:disabled,onPress:onPress,style:[styles.button,color&&{backgroundColor:color},disabled&&styles.buttonDisabled],testID:testID},react_default.a.createElement(Text["a" /* default */],{style:[styles.text,disabled&&styles.textDisabled]},title));};return Button;}(react["Component"]);Button_Button.propTypes= false?undefined:{};var styles=StyleSheet["a" /* default */].create({button:{backgroundColor:'#2196F3',borderRadius:2},text:{color:'#fff',fontWeight:'500',padding:8,textAlign:'center',textTransform:'uppercase'},buttonDisabled:{backgroundColor:'#dfdfdf'},textDisabled:{color:'#a1a1a1'}});/* harmony default export */ var exports_Button = (Button_Button);
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/modules/applyNativeMethods/index.js + 1 modules
-var applyNativeMethods = __webpack_require__(42);
+var applyNativeMethods = __webpack_require__(41);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/exports/View/index.js + 1 modules
 var View = __webpack_require__(8);
@@ -912,7 +912,7 @@ var RCTDeviceEventEmitter = __webpack_require__(172);
 
 "use strict";
 /* harmony import */ var _modules_applyLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(121);
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
@@ -1502,7 +1502,7 @@ var findNodeHandle=function findNodeHandle(component){var node;try{node=Object(r
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var create_react_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71);
 /* harmony import */ var create_react_class__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(create_react_class__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Touchable_ensurePositiveDelayProps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(84);
@@ -1562,7 +1562,7 @@ var AnimatedNode=function(){function AnimatedNode(){}var _proto=AnimatedNode.pro
 "use strict";
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/modules/applyNativeMethods/index.js + 1 modules
-var applyNativeMethods = __webpack_require__(42);
+var applyNativeMethods = __webpack_require__(41);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/react-native-web/dist/exports/createElement/index.js + 2 modules
 var createElement = __webpack_require__(49);
@@ -1752,38 +1752,6 @@ function _inheritsLoose(subClass,superClass){subClass.prototype=Object.create(su
 
 /***/ }),
 /* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ Localization_locale; });
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ Localization_region; });
-
-// UNUSED EXPORTS: locales, timezone, isoCurrencyCodes, isRTL, getLocalizationAsync
-
-// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/regenerator/index.js
-var regenerator = __webpack_require__(2);
-var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-
-// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(9);
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
-
-// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(20);
-var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
-
-// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/rtl-detect/index.js
-var rtl_detect = __webpack_require__(304);
-
-// CONCATENATED MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/expo-localization/build/ExpoLocalization.web.js
-/* harmony default export */ var ExpoLocalization_web = ({get isRTL(){return rtl_detect["isRtlLang"](this.locale);},get locale(){var locale=navigator.language||navigator['systemLanguage']||navigator['browserLanguage']||navigator['userLanguage']||this.locales[0];return locale;},get locales(){var _navigator=navigator,_navigator$languages=_navigator.languages,languages=_navigator$languages===void 0?[]:_navigator$languages;return Array.from(languages);},get timezone(){var defaultTimeZone='Etc/UTC';if(typeof Intl==='undefined'){return defaultTimeZone;}return Intl.DateTimeFormat().resolvedOptions().timeZone||defaultTimeZone;},get isoCurrencyCodes(){return[];},get region(){var locale=this.locale;if(typeof locale==='string'&&locale.length){var isoCountryCode=locale.substring(locale.lastIndexOf('-')+1);return isoCountryCode.toUpperCase();}return undefined;},getLocalizationAsync:function getLocalizationAsync(){var region,isoCurrencyCodes,timezone,locales,locale,isRTL;return regenerator_default.a.async(function getLocalizationAsync$(_context){while(1){switch(_context.prev=_context.next){case 0:region=this.region,isoCurrencyCodes=this.isoCurrencyCodes,timezone=this.timezone,locales=this.locales,locale=this.locale,isRTL=this.isRTL;return _context.abrupt("return",{region:region,isoCurrencyCodes:isoCurrencyCodes,timezone:timezone,locales:locales,locale:locale,isRTL:isRTL});case 2:case"end":return _context.stop();}}},null,this,null,Promise);}});
-// CONCATENATED MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/expo-localization/build/Localization.js
-function ownKeys(object,enumerableOnly){var keys=Object.keys(object);if(Object.getOwnPropertySymbols){var symbols=Object.getOwnPropertySymbols(object);if(enumerableOnly)symbols=symbols.filter(function(sym){return Object.getOwnPropertyDescriptor(object,sym).enumerable;});keys.push.apply(keys,symbols);}return keys;}function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=arguments[i]!=null?arguments[i]:{};if(i%2){ownKeys(Object(source),true).forEach(function(key){defineProperty_default()(target,key,source[key]);});}else if(Object.getOwnPropertyDescriptors){Object.defineProperties(target,Object.getOwnPropertyDescriptors(source));}else{ownKeys(Object(source)).forEach(function(key){Object.defineProperty(target,key,Object.getOwnPropertyDescriptor(source,key));});}}return target;}var parseLocale=function parseLocale(locale){return locale.replace('_','-');};var Localization_locale=parseLocale(ExpoLocalization_web.locale);var Localization_locales=ExpoLocalization_web.locales.map(parseLocale);var Localization_timezone=ExpoLocalization_web.timezone;var Localization_isoCurrencyCodes=ExpoLocalization_web.isoCurrencyCodes;var Localization_region=ExpoLocalization_web.region;var Localization_isRTL=ExpoLocalization_web.isRTL;function Localization_getLocalizationAsync(){var _await$ExpoLocalizati,locale,locales,localization;return regenerator_default.a.async(function getLocalizationAsync$(_context){while(1){switch(_context.prev=_context.next){case 0:_context.next=2;return regenerator_default.a.awrap(ExpoLocalization_web.getLocalizationAsync());case 2:_await$ExpoLocalizati=_context.sent;locale=_await$ExpoLocalizati.locale;locales=_await$ExpoLocalizati.locales;localization=objectWithoutProperties_default()(_await$ExpoLocalizati,["locale","locales"]);return _context.abrupt("return",_objectSpread({locale:parseLocale(locale),locales:ExpoLocalization_web.locales.map(parseLocale)},localization));case 7:case"end":return _context.stop();}}},null,null,null,Promise);}
-
-/***/ }),
-/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2571,7 +2539,7 @@ exports.withOrientationChange = withOrientationChange;
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2594,7 +2562,7 @@ var NativeMethodsMixin={blur:function blur(){UIManager["a" /* default */].blur(O
 var applyNativeMethods_applyNativeMethods=function applyNativeMethods(Component){Object.keys(modules_NativeMethodsMixin).forEach(function(method){if(!Component.prototype[method]){Component.prototype[method]=modules_NativeMethodsMixin[method];}});return Component;};/* harmony default export */ var modules_applyNativeMethods = __webpack_exports__["a"] = (applyNativeMethods_applyNativeMethods);
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var superPropBase = __webpack_require__(554);
@@ -2620,6 +2588,38 @@ function _get(target, property, receiver) {
 }
 
 module.exports = _get;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ Localization_locale; });
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ Localization_region; });
+
+// UNUSED EXPORTS: locales, timezone, isoCurrencyCodes, isRTL, getLocalizationAsync
+
+// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/regenerator/index.js
+var regenerator = __webpack_require__(2);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
+
+// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/defineProperty.js
+var defineProperty = __webpack_require__(9);
+var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
+
+// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(20);
+var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
+
+// EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/rtl-detect/index.js
+var rtl_detect = __webpack_require__(304);
+
+// CONCATENATED MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/expo-localization/build/ExpoLocalization.web.js
+/* harmony default export */ var ExpoLocalization_web = ({get isRTL(){return rtl_detect["isRtlLang"](this.locale);},get locale(){var locale=navigator.language||navigator['systemLanguage']||navigator['browserLanguage']||navigator['userLanguage']||this.locales[0];return locale;},get locales(){var _navigator=navigator,_navigator$languages=_navigator.languages,languages=_navigator$languages===void 0?[]:_navigator$languages;return Array.from(languages);},get timezone(){var defaultTimeZone='Etc/UTC';if(typeof Intl==='undefined'){return defaultTimeZone;}return Intl.DateTimeFormat().resolvedOptions().timeZone||defaultTimeZone;},get isoCurrencyCodes(){return[];},get region(){var locale=this.locale;if(typeof locale==='string'&&locale.length){var isoCountryCode=locale.substring(locale.lastIndexOf('-')+1);return isoCountryCode.toUpperCase();}return undefined;},getLocalizationAsync:function getLocalizationAsync(){var region,isoCurrencyCodes,timezone,locales,locale,isRTL;return regenerator_default.a.async(function getLocalizationAsync$(_context){while(1){switch(_context.prev=_context.next){case 0:region=this.region,isoCurrencyCodes=this.isoCurrencyCodes,timezone=this.timezone,locales=this.locales,locale=this.locale,isRTL=this.isRTL;return _context.abrupt("return",{region:region,isoCurrencyCodes:isoCurrencyCodes,timezone:timezone,locales:locales,locale:locale,isRTL:isRTL});case 2:case"end":return _context.stop();}}},null,this,null,Promise);}});
+// CONCATENATED MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/expo-localization/build/Localization.js
+function ownKeys(object,enumerableOnly){var keys=Object.keys(object);if(Object.getOwnPropertySymbols){var symbols=Object.getOwnPropertySymbols(object);if(enumerableOnly)symbols=symbols.filter(function(sym){return Object.getOwnPropertyDescriptor(object,sym).enumerable;});keys.push.apply(keys,symbols);}return keys;}function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=arguments[i]!=null?arguments[i]:{};if(i%2){ownKeys(Object(source),true).forEach(function(key){defineProperty_default()(target,key,source[key]);});}else if(Object.getOwnPropertyDescriptors){Object.defineProperties(target,Object.getOwnPropertyDescriptors(source));}else{ownKeys(Object(source)).forEach(function(key){Object.defineProperty(target,key,Object.getOwnPropertyDescriptor(source,key));});}}return target;}var parseLocale=function parseLocale(locale){return locale.replace('_','-');};var Localization_locale=parseLocale(ExpoLocalization_web.locale);var Localization_locales=ExpoLocalization_web.locales.map(parseLocale);var Localization_timezone=ExpoLocalization_web.timezone;var Localization_isoCurrencyCodes=ExpoLocalization_web.isoCurrencyCodes;var Localization_region=ExpoLocalization_web.region;var Localization_isRTL=ExpoLocalization_web.isRTL;function Localization_getLocalizationAsync(){var _await$ExpoLocalizati,locale,locales,localization;return regenerator_default.a.async(function getLocalizationAsync$(_context){while(1){switch(_context.prev=_context.next){case 0:_context.next=2;return regenerator_default.a.awrap(ExpoLocalization_web.getLocalizationAsync());case 2:_await$ExpoLocalizati=_context.sent;locale=_await$ExpoLocalizati.locale;locales=_await$ExpoLocalizati.locales;localization=objectWithoutProperties_default()(_await$ExpoLocalizati,["locale","locales"]);return _context.abrupt("return",_objectSpread({locale:parseLocale(locale),locales:ExpoLocalization_web.locales.map(parseLocale)},localization));case 7:case"end":return _context.stop();}}},null,null,null,Promise);}
 
 /***/ }),
 /* 44 */
@@ -2659,7 +2659,7 @@ module.exports = _slicedToArray;
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_applyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(121);
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41);
 /* harmony import */ var fbjs_lib_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(23);
 /* harmony import */ var fbjs_lib_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(fbjs_lib_ExecutionEnvironment__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(0);
@@ -13270,7 +13270,7 @@ var createClass = __webpack_require__(5);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/get.js
-var helpers_get = __webpack_require__(43);
+var helpers_get = __webpack_require__(42);
 var get_default = /*#__PURE__*/__webpack_require__.n(helpers_get);
 
 // EXTERNAL MODULE: /Users/jorgesanmartin/Documents/Repositories/React/XekAppWeb/node_modules/@babel/runtime/helpers/inherits.js
@@ -14194,7 +14194,7 @@ module.exports = castPath;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var _ColorPropType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
 /* harmony import */ var create_react_class__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71);
 /* harmony import */ var create_react_class__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(create_react_class__WEBPACK_IMPORTED_MODULE_2__);
@@ -16874,7 +16874,7 @@ function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=ar
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var _StyleSheet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var _View__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
@@ -16917,7 +16917,7 @@ function _objectSpread(target){for(var i=1;i<arguments.length;i++){var source=ar
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
+/* harmony import */ var _modules_applyNativeMethods__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
 /* harmony import */ var _modules_multiplyStyleLengthValue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(126);
 /* harmony import */ var _StyleSheet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
@@ -31656,4 +31656,4 @@ function createStackNavigator_extends(){createStackNavigator_extends=Object.assi
 
 /***/ })
 ]]);
-//# sourceMappingURL=2.94a0fe50.chunk.js.map
+//# sourceMappingURL=2.315aac7a.chunk.js.map
