@@ -5,8 +5,7 @@ import {
     View,
     TouchableOpacity,
     Image,
-    TouchableWithoutFeedback,
-    Keyboard, ScrollView
+    ScrollView
 } from 'react-native';
 import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../utils/Colors";
@@ -15,7 +14,6 @@ import {isValidPhoneNumber} from 'react-phone-number-input'
 import {Snackbar} from "react-native-paper";
 import BackButton from "../../components/BackButton";
 import languages from "../../utils/languages/AppLocalization";
-import * as Localization from "expo-localization";
 import CustomPhoneInput from "../../components/phone/PhoneInput";
 
 class PhoneScreen extends Component {
@@ -53,8 +51,7 @@ class PhoneScreen extends Component {
 
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
-        return <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <View style={styles.mainContainer}>
+        return <View style={styles.mainContainer}>
                 <View style={styles.container}>
 
                     <BackButton onClick={() => {
@@ -73,7 +70,7 @@ class PhoneScreen extends Component {
 
                         <View style={styles.textInputContainer}>
                             <CustomPhoneInput country={this.state.country}
-                                              currentCountry={Localization.region} onChangeText={(phone => {
+                                              onChangeText={(phone => {
                                 this.setState({
                                     phoneError: !isValidPhoneNumber(phone),
                                     enableToSend: isValidPhoneNumber(phone),
@@ -104,7 +101,6 @@ class PhoneScreen extends Component {
                     </Snackbar>
                 </View>
             </View>
-        </TouchableWithoutFeedback>
     }
 }
 
@@ -177,7 +173,6 @@ const styles = StyleSheet.create({
         width: "90%",
         borderBottomWidth: 2,
         borderColor: Colors.primary,
-        borderRadius: 4,
         marginTop: 60,
         padding: 5
     },

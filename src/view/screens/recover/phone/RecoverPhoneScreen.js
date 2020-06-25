@@ -5,8 +5,7 @@ import {
     View,
     TouchableOpacity,
     Image,
-    TouchableWithoutFeedback,
-    Keyboard, ScrollView
+    ScrollView
 } from 'react-native';
 import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../../utils/Colors";
@@ -15,7 +14,6 @@ import {Snackbar} from "react-native-paper";
 import BackButton from "../../../components/BackButton";
 import RecoverPhonePresenter from "./presenter/RecoverPhonePresenter";
 import languages from "../../../utils/languages/AppLocalization";
-import * as Localization from 'expo-localization';
 import CustomPhoneInput from '../../../components/phone/PhoneInput'
 
 class RecoverPhoneScreen extends Component {
@@ -53,9 +51,7 @@ class RecoverPhoneScreen extends Component {
 
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
-        return <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-
-            <View style={styles.mainContainer}>
+        return <View style={styles.mainContainer}>
 
                 <View style={styles.container}>
                     <BackButton onClick={() => {
@@ -74,7 +70,7 @@ class RecoverPhoneScreen extends Component {
 
                         <View style={styles.textInputContainer}>
                             <CustomPhoneInput country={this.state.country}
-                                              currentCountry={Localization.region} onChangeText={(phone => {
+                                              onChangeText={(phone => {
                                 this.setState({
                                     phoneError: !isValidPhoneNumber(phone),
                                     enableToSend: isValidPhoneNumber(phone),
@@ -104,7 +100,6 @@ class RecoverPhoneScreen extends Component {
                     </Snackbar>
                 </View>
             </View>
-        </TouchableWithoutFeedback>
     }
 }
 
