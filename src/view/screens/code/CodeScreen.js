@@ -6,8 +6,9 @@ import {
     TouchableOpacity,
     TextInput,
     Image,
-    ScrollView
+    ScrollView, Dimensions
 } from 'react-native';
+import { ProgressBar } from 'react-native-paper';
 import {isMobileOnly} from 'react-device-detect';
 import Colors from "../../utils/Colors";
 import CodePresenter from "./presenter/CodePresenter";
@@ -31,7 +32,17 @@ class CodeScreen extends Component {
             snackColor: Colors.red,
             message: '',
             showPlaceHolder: true,
+            progressLoader:0.0,
+            isLoaderVisible:false
         }
+    }
+
+    progressLoaderStart(progress){
+        this.setState({isLoaderVisible: true, progressLoader:progress})
+    }
+
+    hideProgressBar(){
+        this.setState({isLoaderVisible: false, progressLoader:0.0})
     }
 
     showErrorCode() {
@@ -65,6 +76,8 @@ class CodeScreen extends Component {
     render() {
         let colorCode = this.state.enableToSendCode ? Colors.buttonEnable : Colors.disable
         return <View style={styles.mainContainer}>
+            <ProgressBar visible={this.state.isLoaderVisible} progress={this.state.progressLoader} color={Colors.primary} style={styles.loader}  />
+
             <View style={styles.container}>
 
                 <BackButton onClick={() => {
@@ -138,6 +151,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         backgroundColor: Colors.white,
+    },
+
+    loader: {
+        marginTop: 0,
+        width: Dimensions.get('window').width,
+        height: 5,
     },
 
     icon: {

@@ -20,7 +20,7 @@ class LocationManager {
                 return { permission: "granted", location: {city: city, country: country,
                     latitude: coords.latitude, longitude: coords.longitude}}
             } else {
-                return { permission: "granted",  error: "reverse geocode fail"}
+                return { permission: "granted", location: coords ,error: "reverse geocode fail"}
             }
         } else {
             return { permission: "no granted"}

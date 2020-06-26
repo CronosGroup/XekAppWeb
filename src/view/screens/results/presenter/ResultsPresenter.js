@@ -60,21 +60,29 @@ class ResultsPresenter {
     }
 
     async validateLocation(){
+        this.view.setDisableStatusButton(true)
+        this.view.progressLoaderStart(0.25)
         const location = await locationManager.requestLocation()
+        console.log("location", location)
         if (location.permission === 'granted'){
-            if (location.error === undefined){
-                const userPersistence = await UserPersistence.getInstance()
-                const dataSource = await Datasource.getInstance()
-                let access_token = await userPersistence.getAccessToken()
-                dataSource.putUserLocation(location.location, access_token).then(value => {
-                    this.view.navigateToMap()
-                }).catch(reason => {
-                    this.view.showLocationError()
-                })
-            }else{
+            this.view.progressLoaderStart(0.60)
+            const userPersistence = await UserPersistence.getInstance()
+            const dataSource = await Datasource.getInstance()
+            let access_token = await userPersistence.getAccessToken()
+            dataSource.putUserLocation(location.location, access_token).then(value => {
+                console.log("putUserLocation", value)
+                this.view.hideProgressBar()
+                this.view.setDisableStatusButton(false)
+                this.view.navigateToMap()
+            }).catch(reason => {
+                console.log("putUserLocation_error", reason)
+                this.view.hideProgressBar()
+                this.view.setDisableStatusButton(false)
                 this.view.showLocationError()
-            }
+            })
         }else{
+            this.view.hideProgressBar()
+            this.view.setDisableStatusButton(false)
             this.view.showLocationNoAllowError()
         }
     }

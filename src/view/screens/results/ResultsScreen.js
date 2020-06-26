@@ -8,7 +8,9 @@ import {
     FlatList,
     BackHandler,
 } from 'react-native';
+import { Dimensions } from 'react-native';
 import {isMobileOnly} from 'react-device-detect';
+import { ProgressBar } from 'react-native-paper';
 import Colors from "../../utils/Colors";
 import ResultsPresenter from "./presenter/ResultsPresenter";
 import languages from "../../utils/languages/AppLocalization.js";
@@ -36,8 +38,23 @@ class ResultsScreen extends Component {
             descriptionText: '',
             statusImage: StatusEmpty,
             errorBackend: false,
-            errorMessage: ''
+            errorMessage: '',
+            progressLoader: 0.0,
+            isLoaderVisible: false,
+            disabledButton: false
         }
+    }
+
+    setDisableStatusButton(enable){
+        this.setState({disabledButton: enable})
+    }
+
+    progressLoaderStart(progress){
+        this.setState({isLoaderVisible: true, progressLoader:progress})
+    }
+
+    hideProgressBar(){
+        this.setState({isLoaderVisible: false, progressLoader:0.0})
     }
 
     onBackPress = () => {
@@ -131,6 +148,7 @@ class ResultsScreen extends Component {
     render() {
         return <View style={styles.mainContainer}>
             <View style={styles.container}>
+                <ProgressBar visible={this.state.isLoaderVisible} progress={this.state.progressLoader} color={Colors.primary} style={styles.loader}  />
 
                 <Image style={styles.icon} source={require('../../../../assets/logo.png')}/>
 
@@ -150,7 +168,7 @@ class ResultsScreen extends Component {
                     }
                 />
 
-                <TouchableOpacity activeOpacity={0.7} style={styles.button}
+                <TouchableOpacity activeOpacity={0.7} style={styles.button} disabled={this.state.disabledButton}
                                   onPress={() => this.presenter.validateLocation()}>
                     <Text style={styles.buttonText}>{languages.getLocalized("results_status_action")}</Text>
                 </TouchableOpacity>
@@ -183,6 +201,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         backgroundColor: Colors.white,
+    },
+
+    loader: {
+        marginTop: 0,
+        width: Dimensions.get('window').width,
+        height: 5,
     },
 
     loading: {

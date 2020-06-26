@@ -6,7 +6,8 @@ import {
     TouchableOpacity,
     TextInput,
     Image,
-    Keyboard, TouchableWithoutFeedback
+    Keyboard,
+    TouchableWithoutFeedback
 } from 'react-native';
 import Colors from "../../utils/Colors";
 import EmailPresenter from "./presenter/EmailPresenter";
