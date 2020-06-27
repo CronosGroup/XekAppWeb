@@ -241,6 +241,8 @@ const styles = StyleSheet.create({
     },
 
     modalContentContainer: {
+        marginLeft:15,
+        marginRight:15,
         backgroundColor: Colors.white,
         justifyContent: 'flex-start',
         alignItems: 'center',
