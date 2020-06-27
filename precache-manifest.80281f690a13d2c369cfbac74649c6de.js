@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "90dba13f564bcac6a3f6",
-    "url": "/XekAppWeb/static/js/app.fc98bfc6.chunk.js"
+    "revision": "ca70f8ebaec5109282de",
+    "url": "/XekAppWeb/static/js/app.56d6797c.chunk.js"
   },
   {
     "revision": "fb25d142a62e24de3e7d",
@@ -100,12 +100,12 @@ self.__precacheManifest = [
     "url": "/XekAppWeb/./fonts/Nunito-Regular.ttf"
   },
   {
-    "revision": "d0c694b562b2208635f250762cd7fc79",
-    "url": "/XekAppWeb/serve.json"
-  },
-  {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/XekAppWeb/expo-service-worker.js"
+  },
+  {
+    "revision": "d0c694b562b2208635f250762cd7fc79",
+    "url": "/XekAppWeb/serve.json"
   },
   {
     "revision": "dd3614974cad8f8ce4ac52af17f4ae87",
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/XekAppWeb/favicon.ico"
   },
   {
-    "revision": "4d33d918bbecdf45badb009e453a40b0",
+    "revision": "2dcf5d72e54ccac1960393f1a8495e28",
     "url": "/XekAppWeb/index.html"
   },
   {
