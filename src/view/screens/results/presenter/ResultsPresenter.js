@@ -60,7 +60,7 @@ class ResultsPresenter {
     }
 
     async validateLocation(){
-        this.view.setDisableStatusButton(true)
+       this.view.setDisableStatusButton(true)
         this.view.progressLoaderStart(0.25)
         const location = await locationManager.requestLocation()
         console.log("location", location)

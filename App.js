@@ -19,6 +19,7 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import PlaceHolderScreen from './src/view/screens/PlaceHolderScreen'
 import CountrySelector from "./src/view/components/phone/CountrySelector";
+import FaqWebScreen from "./src/view/screens/web/FaqWebScreen";
 
 const Stack = createStackNavigator();
 
@@ -113,10 +114,17 @@ class App extends Component {
                     <Stack.Screen name="RecoverPhone" component={RecoverPhoneScreen} options={recoverPhoneOptions}/>
                     <Stack.Screen name="RecoverCode" component={RecoverCodeScreen} options={recoverCodeOptions}/>
                     <Stack.Screen name="CountrySelector" component={CountrySelector} options={countrySelectorOptions}/>
+                    <Stack.Screen name="FaqWeb" component={FaqWebScreen} options={faqWebOptions}/>
                 </Stack.Navigator>
             </NavigationContainer>
         );
     }
+}
+
+const faqWebOptions = {
+    title: 'Faq',
+    headerShown: false,
+    gestureEnabled: false,
 }
 
 const welcomeOptions = {
