@@ -97,8 +97,7 @@ class MapScreen extends Component {
                         strokeOpacity={1}
                         strokeWeight={2.5}
                         fillColor={Colors.radiusFill}
-                        fillOpacity={0.8}
-                    />
+                        fillOpacity={0.8}/>
 
                 </Map>
 
@@ -179,7 +178,23 @@ const styles = StyleSheet.create({
     },
 });
 
+const LoadingContainer = (props) => (
+    <View style={styles.mainContainer}>
+        <View style={styles.container}>
+            <BackButton/>
+            <Image
+                style={styles.icon}
+                source={require('../../../../assets/logo.png')}/>
+            <View style={mapStyle}/>
+            <TouchableOpacity activeOpacity={0.7} style={styles.buttonName}>
+                <Text style={styles.buttonNameText}>{languages.getLocalized("map_update_form_action")}</Text>
+            </TouchableOpacity>
+        </View>
+    </View>
+)
+
 export default GoogleApiWrapper({
-    apiKey: manifest.expo.extra.maps.apiKey
+    apiKey: manifest.expo.extra.maps.apiKey,
+    LoadingContainer: LoadingContainer
 })(MapScreen);
 
