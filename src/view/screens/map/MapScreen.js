@@ -70,6 +70,7 @@ class MapScreen extends Component {
                 <Map google={this.props.google}
                      center={this.state.region}
                      containerStyle={mapStyle}
+                     disableDefaultUI={true}
                      zoom={20}>
 
                     {this.state.markers.map((marker) => {
