@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/XekAppWeb/static/js/app.a96c0264.chunk.js",
-    "app.js.map": "/XekAppWeb/static/js/app.a96c0264.chunk.js.map",
+    "app.js": "/XekAppWeb/static/js/app.d31cef5c.chunk.js",
+    "app.js.map": "/XekAppWeb/static/js/app.d31cef5c.chunk.js.map",
     "runtime~app.js": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js",
     "runtime~app.js.map": "/XekAppWeb/static/js/runtime~app.1bf5d56b.js.map",
     "static/js/2.ac911b23.chunk.js": "/XekAppWeb/static/js/2.ac911b23.chunk.js",
@@ -38,6 +38,6 @@
   "entrypoints": [
     "static/js/runtime~app.1bf5d56b.js",
     "static/js/2.ac911b23.chunk.js",
-    "static/js/app.a96c0264.chunk.js"
+    "static/js/app.d31cef5c.chunk.js"
   ]
 }

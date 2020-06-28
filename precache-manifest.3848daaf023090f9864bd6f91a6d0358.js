@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "668e0f8181092f185e29",
-    "url": "/XekAppWeb/static/js/app.a96c0264.chunk.js"
+    "revision": "22c8a378389b847e9319",
+    "url": "/XekAppWeb/static/js/app.d31cef5c.chunk.js"
   },
   {
     "revision": "fb25d142a62e24de3e7d",
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/XekAppWeb/favicon.ico"
   },
   {
-    "revision": "a06845d03216547b49a6ef782f5df150",
+    "revision": "0cf3826fcb50d9d0ed32e9b450852db1",
     "url": "/XekAppWeb/index.html"
   },
   {
