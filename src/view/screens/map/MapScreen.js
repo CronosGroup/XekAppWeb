@@ -71,6 +71,7 @@ class MapScreen extends Component {
                      center={this.state.region}
                      containerStyle={mapStyle}
                      disableDefaultUI={true}
+                     zoomControl={true}
                      zoom={20}>
 
                     {this.state.markers.map((marker) => {
