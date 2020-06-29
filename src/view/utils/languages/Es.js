@@ -136,7 +136,7 @@ class Es {
          *  Location
          ***********************/
 
-        location_action_cancel:"CANCEL",
+        location_action_cancel:"CANCELAR",
         location_action_enable:"COMO HABILITAR LA LOCALIZACIÓN",
 
     }
