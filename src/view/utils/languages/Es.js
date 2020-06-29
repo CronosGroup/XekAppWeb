@@ -130,7 +130,14 @@ class Es {
 
         map_update_form_action:"Actualiza tus síntomas",
         map_location_enable_message:"Para poder mostrar los resultados, debes permitir a XekApp acceder a tu ubicación.",
-        map_location_error_message:"Se ha producido un error intentelo de nuevo"
+        map_location_error_message:"Se ha producido un error intentelo de nuevo",
+
+        /***********************
+         *  Location
+         ***********************/
+
+        location_action_cancel:"CANCEL",
+        location_action_enable:"COMO HABILITAR LA LOCALIZACIÓN",
 
     }
 }
