@@ -1,0 +1,36 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: publish_version
+    image: plugins/ecr
+    when:
+      event: tag
+    settings:
+      create_repository: true
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      repo: 409821280579.dkr.ecr.us-east-1.amazonaws.com/covid/frontend
+      registry: 409821280579.dkr.ecr.us-east-1.amazonaws.com
+      tags:
+        - "${DRONE_TAG}"
+
+  - name: publish_branch
+    image: plugins/ecr
+    when:
+      event:
+        - push
+      branch:
+        exclude: [ master, develop ]
+    settings:
+      create_repository: true
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      repo: 409821280579.dkr.ecr.us-east-1.amazonaws.com/covid/frontend
+      registry: 409821280579.dkr.ecr.us-east-1.amazonaws.com
+      tags:
+        - ${DRONE_BRANCH/\//-}.${DRONE_BUILD_NUMBER}

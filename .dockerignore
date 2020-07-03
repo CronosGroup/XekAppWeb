@@ -1,0 +1,6 @@
+.expo/
+.git/
+.idea/
+node_modules/
+web-build/
+
