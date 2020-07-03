@@ -1,5 +1,4 @@
-FROM node:12.16.1 as build-image
-RUN npm install -g expo-cli
+FROM sraicronos/expo:3.21.5 as build-image
 COPY . .
 RUN npm install
 RUN npm run predeploy
