@@ -139,6 +139,15 @@ class En {
         location_action_cancel:"CANCEL",
         location_action_enable:"HOW TO ENABLE LOCATION",
 
+        /***********************
+        *  Errors
+        ***********************/
+
+        account_already_exist:"There is already an account associated with this number",
+        account_no_exist:"The number you entered does not match with any account. Check your number or create an account.",
+
+        action_ok:"OK",
+
     }
 }
 export default En;
