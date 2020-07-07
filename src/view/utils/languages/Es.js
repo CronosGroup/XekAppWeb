@@ -139,6 +139,15 @@ class Es {
         location_action_cancel:"CANCELAR",
         location_action_enable:"COMO HABILITAR LA LOCALIZACIÓN",
 
+        /***********************
+         *  Errors
+         ***********************/
+
+        account_already_exist:"Ya existe una cuenta asociada con este número",
+        account_no_exist:"El número que ingresaste no coincide con ninguna cuenta. Verifica tu número o crea una cuenta",
+
+        action_ok:"ACEPTAR",
+
     }
 }
 export default Es;

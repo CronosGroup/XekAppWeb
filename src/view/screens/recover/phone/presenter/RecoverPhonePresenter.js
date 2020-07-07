@@ -1,6 +1,8 @@
 import Datasource from "../../../../../data/datasource/Datasource";
 import {Keyboard} from "react-native";
 
+const ERROR_ACCOUNT_NO_EXIST = "1000"
+
 class RecoverPhonePresenter {
 
     setView(view) {
@@ -16,7 +18,9 @@ class RecoverPhonePresenter {
             console.log("savePhone", value)
             if (value.code === undefined) {
                 this.view.navigateToCode()
-            } else {
+            } else if(value.type === ERROR_ACCOUNT_NO_EXIST){
+                this.view.showModalBackendError()
+            }else{
                 this.view.showBackendError()
             }
         }).catch(reason => {

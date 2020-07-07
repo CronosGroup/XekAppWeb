@@ -15,11 +15,13 @@ import BackButton from "../../../components/BackButton";
 import RecoverPhonePresenter from "./presenter/RecoverPhonePresenter";
 import languages from "../../../utils/languages/AppLocalization";
 import CustomPhoneInput from '../../../components/phone/PhoneInput'
+import InfoDialog from "../../../components/InfoDialog";
 
 class RecoverPhoneScreen extends Component {
 
     constructor(props) {
         super(props)
+        this.closePressed = this.closePressed.bind(this)
         this.presenter = new RecoverPhonePresenter()
         this.presenter.setView(this)
         this.state = {
@@ -30,6 +32,7 @@ class RecoverPhoneScreen extends Component {
             message: '',
             phone: '',
             country: null,
+            errorModalVisible : false,
         }
     }
 
@@ -41,6 +44,10 @@ class RecoverPhoneScreen extends Component {
         })
     }
 
+    showModalBackendError() {
+        this.setState({errorModalVisible: true})
+    }
+
     navigateToCode() {
         this.props.navigation.navigate('RecoverCode')
     }
@@ -49,11 +56,17 @@ class RecoverPhoneScreen extends Component {
         this.setState({country: country})
     }
 
+    closePressed(){
+        this.setState({errorModalVisible: false})
+    }
+
     render() {
         let color = this.state.enableToSend ? Colors.buttonEnable : Colors.disable
         return <View style={styles.mainContainer}>
 
-                <View style={styles.container}>
+            {this.state.errorModalVisible ?  <InfoDialog hide={this.closePressed} title={languages.getLocalized("account_no_exist")}/> : null}
+
+            <View style={styles.container}>
                     <BackButton onClick={() => {
                         this.props.navigation.goBack()
                     }}/>

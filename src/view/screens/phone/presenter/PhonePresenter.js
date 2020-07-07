@@ -2,6 +2,8 @@ import UserPersistence from "../../../../data/local/UserPersistence";
 import Datasource from "../../../../data/datasource/Datasource";
 import {Keyboard} from "react-native";
 
+const ERROR_ACCOUNT_ALREADY_EXIST = "1002"
+
 class PhonePresenter {
 
     setView(view) {
@@ -19,7 +21,9 @@ class PhonePresenter {
             console.debug("savePhone", value)
             if (value.code === undefined) {
                 this.view.navigateToCode()
-            } else {
+            } else if(value.type === ERROR_ACCOUNT_ALREADY_EXIST ){
+                this.view.showModalBackendError()
+            }else{
                 this.view.showBackendError()
             }
         }).catch(reason => {
